@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>CoGLabs 사업계획서 v2 · 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ══════════════  BASE SYSTEM  ══════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans KR', -apple-system, sans-serif;
+  background: #c8d6c0;
+  padding: 40px 20px;
+}
+:root {
+  --green:    #16a34a;
+  --green-d:  #15803d;
+  --green-dd: #14532d;
+  --green-l:  #4ade80;
+  --green-xl: #bbf7d0;
+  --green-bg: #f0fdf4;
+  --dark:     #0f172a;
+  --dark2:    #1e293b;
+  --gray:     #64748b;
+  --gray-l:   #94a3b8;
+  --gray-xl:  #e2e8f0;
+  --white:    #ffffff;
+  --orange:   #f97316;
+  --red:      #ef4444;
+  --amber:    #f59e0b;
+}
+.slide {
+  width: 1280px; height: 720px;
+  position: relative; overflow: hidden;
+  margin: 0 auto 48px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  background: white;
+}
+.slide-no {
+  position: absolute; bottom: 18px; right: 28px;
+  font-size: 10px; color: rgba(255,255,255,0.35);
+  font-weight: 600; letter-spacing: 0.1em; z-index: 100;
+}
+.slide-no.dark { color: var(--gray-l); }
+.sh {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 56px; border-bottom: 1px solid var(--gray-xl);
+  flex-shrink: 0;
+}
+.sh-chapter {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--green);
+}
+.sh-chapter::before {
+  content: ''; display: block; width: 6px; height: 6px;
+  background: var(--green); border-radius: 50%;
+}
+.sh-brand { font-size: 0.82rem; font-weight: 900; color: var(--green); letter-spacing: -0.02em; }
+.sec-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: 100px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 12px; flex-shrink: 0;
+}
+.badge-g { background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.3); color: var(--green); }
+.badge-r { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: var(--red); }
+.badge-o { background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.3); color: var(--orange); }
+
+/* ══════════════  CHAPTER SEPARATORS  ══════════════ */
+.schap { background: var(--green); }
+.schap-body { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.schap-num { font-size: 7rem; font-weight: 900; color: rgba(255,255,255,0.13); line-height: 1; }
+.schap-line { width: 48px; height: 3px; background: rgba(255,255,255,0.35); border-radius: 2px; margin: 20px auto; }
+.schap-title { font-size: 3.2rem; font-weight: 900; color: white; letter-spacing: -0.04em; }
+.schap-en { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 0.25em; text-transform: uppercase; margin-top: 12px; }
+
+/* ══════════════  SLIDE 01 · COVER  ══════════════ */
+.s1 { background: linear-gradient(150deg, #071510 0%, #0d2d14 55%, #0f3d1a 100%); }
+.s1-dots { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 44px 44px; }
+.s1-glow1 { position: absolute; top: -140px; left: -180px; width: 560px; height: 560px; background: radial-gradient(circle, rgba(22,163,74,0.18) 0%, transparent 70%); }
+.s1-glow2 { position: absolute; bottom: -100px; right: -100px; width: 440px; height: 440px; background: radial-gradient(circle, rgba(74,222,128,0.1) 0%, transparent 70%); }
+.s1-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1; }
+.s1-kicker { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-l); margin-bottom: 16px; }
+.s1-title { font-size: 4rem; font-weight: 900; color: white; letter-spacing: -0.04em; line-height: 1.12; text-align: center; margin-bottom: 14px; }
+.s1-title em { color: var(--green-l); font-style: normal; }
+.s1-divider { width: 56px; height: 3px; background: var(--green); border-radius: 2px; margin: 18px 0 24px; }
+.s1-sub { font-size: 0.98rem; color: rgba(255,255,255,0.5); letter-spacing: 0.03em; margin-bottom: 44px; text-align: center; line-height: 1.6; }
+.s1-meta { display: flex; gap: 48px; }
+.s1-meta-item { text-align: center; }
+.s1-meta-item .mlabel { font-size: 0.65rem; color: rgba(255,255,255,0.35); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
+.s1-meta-item .mval { font-size: 0.88rem; color: rgba(255,255,255,0.75); font-weight: 600; }
+
+/* ══════════════  SLIDE 02 · PROBLEM A  ══════════════ */
+.s02 { background: var(--white); }
+.s02-body {
+  padding: 24px 56px 22px; height: calc(100% - 57px);
+  display: flex; flex-direction: column;
+}
+.s02-heading { font-size: 2.1rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 4px; }
+.s02-heading em { color: var(--red); font-style: normal; }
+.s02-sub { font-size: 0.85rem; color: var(--gray); margin-bottom: 18px; }
+/* stat flow row */
+.s02-flow {
+  display: grid; grid-template-columns: 1fr 44px 1fr 44px 1fr;
+  align-items: stretch; margin-bottom: 16px; flex-shrink: 0;
+}
+.s02-stat {
+  background: var(--gray-xl); border-radius: 14px; padding: 18px 20px;
+  text-align: center;
+}
+.s02-stat-num {
+  font-size: 2.8rem; font-weight: 900; color: var(--dark);
+  letter-spacing: -0.04em; line-height: 1;
+}
+.s02-stat-num span { font-size: 1.3rem; color: var(--green); }
+.s02-stat-label { font-size: 0.87rem; font-weight: 700; color: var(--dark); margin: 6px 0 3px; }
+.s02-stat-desc { font-size: 0.71rem; color: var(--gray); line-height: 1.5; }
+.s02-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: var(--gray-l); font-weight: 300; }
+/* barrier cards */
+.s02-barriers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; flex: 1; min-height: 0; }
+.s02-barrier {
+  border-radius: 16px; padding: 22px 20px;
+  background: white; border: 1.5px solid var(--gray-xl);
+  position: relative; overflow: hidden; display: flex; flex-direction: column;
+}
+.s02-barrier::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+}
+.s02-barrier:nth-child(1)::before { background: var(--red); }
+.s02-barrier:nth-child(2)::before { background: var(--orange); }
+.s02-barrier:nth-child(3)::before { background: var(--amber); }
+.s02-barrier-icon { font-size: 1.9rem; margin-bottom: 10px; }
+.s02-barrier-title { font-size: 0.98rem; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+.s02-barrier-key { font-size: 0.77rem; font-weight: 700; color: var(--dark2); margin-bottom: 6px; padding-bottom: 8px; border-bottom: 1px solid var(--gray-xl); }
+.s02-barrier-desc { font-size: 0.75rem; color: var(--gray); line-height: 1.65; flex: 1; }
+
+/* ══════════════  SLIDE 03 · PROBLEM B + OPPORTUNITY  ══════════════ */
+.s03 { background: var(--white); }
+.s03-body {
+  padding: 22px 56px 18px; height: calc(100% - 57px);
+  display: flex; flex-direction: column;
+}
+.s03-heading { font-size: 1.9rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 4px; line-height: 1.25; }
+.s03-heading em { color: var(--green); font-style: normal; }
+.s03-sub { font-size: 0.84rem; color: var(--gray); margin-bottom: 14px; }
+/* split layout */
+.s03-split {
+  display: grid; grid-template-columns: 1fr 60px 1fr;
+  flex: 1; align-items: stretch; min-height: 0;
+}
+.s03-panel {
+  border-radius: 16px; padding: 20px 22px;
+  display: flex; flex-direction: column;
+}
+.s03-panel-l {
+  background: rgba(239,68,68,0.035);
+  border: 1.5px solid rgba(239,68,68,0.18);
+}
+.s03-panel-r {
+  background: var(--green-bg);
+  border: 1.5px solid rgba(22,163,74,0.22);
+}
+.s03-panel-tag {
+  font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 100px;
+  display: inline-block; margin-bottom: 8px; align-self: flex-start;
+}
+.s03-panel-l .s03-panel-tag { color: var(--red); background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.25); }
+.s03-panel-r .s03-panel-tag { color: var(--green-d); background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.3); }
+.s03-panel-title { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; }
+.s03-rows { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.s03-pain-row {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 11px 14px; background: white; border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05); flex: 1;
+}
+.s03-pain-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+.s03-pain-label { font-size: 0.85rem; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+.s03-pain-sub { font-size: 0.71rem; color: var(--gray); line-height: 1.5; }
+.s03-opp-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 11px 14px; background: white; border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05); flex: 1;
+}
+.s03-opp-num { font-size: 1.45rem; font-weight: 900; color: var(--green); letter-spacing: -0.03em; flex-shrink: 0; min-width: 90px; text-align: center; }
+.s03-opp-desc { font-size: 0.78rem; color: var(--dark2); line-height: 1.5; }
+.s03-opp-desc strong { color: var(--dark); font-weight: 700; }
+/* bridge connector */
+.s03-bridge {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 16px 0; gap: 0;
+}
+.s03-bridge-line {
+  flex: 1; width: 2px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(22,163,74,0.3) 30%, rgba(22,163,74,0.3) 70%, transparent 100%);
+}
+.s03-bridge-center {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: white; border: 2px solid rgba(22,163,74,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--green);
+  box-shadow: 0 2px 12px rgba(22,163,74,0.15); flex-shrink: 0;
+}
+/* bottom banner */
+.s03-banner {
+  margin-top: 12px; background: var(--dark); border-radius: 12px;
+  padding: 14px 32px; display: flex; align-items: center;
+  gap: 20px; flex-shrink: 0;
+}
+.s03-banner-problems { display: flex; flex-direction: column; gap: 5px; flex: 1; }
+.s03-banner-prob {
+  font-size: 0.78rem; color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; gap: 8px;
+}
+.s03-banner-prob::before { content: '·'; color: var(--green-l); font-size: 1.1rem; line-height: 0.8; flex-shrink: 0; }
+.s03-banner-arrow { font-size: 2.4rem; font-weight: 300; color: var(--green-l); flex-shrink: 0; line-height: 1; }
+.s03-banner-solution { text-align: center; flex-shrink: 0; padding: 0 16px; }
+.s03-banner-solution-name { font-size: 1.35rem; font-weight: 900; color: var(--green-l); letter-spacing: -0.02em; }
+.s03-banner-solution-sub { font-size: 0.68rem; color: rgba(255,255,255,0.45); margin-top: 3px; letter-spacing: 0.05em; }
+
+/* ══════════════  SLIDE 02 · 2-COL SPLIT ADDITIONS  ══════════════ */
+.s02-cols { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; flex: 1; min-height: 0; }
+.s02-col-sep { background: var(--gray-xl); }
+.s02-col-l { padding-right: 24px; display: flex; flex-direction: column; }
+.s02-col-r { padding-left: 24px; display: flex; flex-direction: column; }
+.s02-col-tag { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; padding: 3px 9px; border-radius: 100px; display: inline-block; margin-bottom: 7px; }
+.s02-col-tag.a { background: rgba(239,68,68,0.1); color: var(--red); border: 1px solid rgba(239,68,68,0.25); }
+.s02-col-tag.b { background: rgba(22,163,74,0.1); color: var(--green-d); border: 1px solid rgba(22,163,74,0.25); }
+.s02-col-title { font-size: 0.88rem; font-weight: 800; color: var(--dark); margin-bottom: 9px; }
+.s02-stats-mini { display: flex; align-items: center; gap: 4px; margin-bottom: 10px; padding: 7px 10px; background: var(--gray-xl); border-radius: 10px; }
+.s02-sm-stat { flex: 1; text-align: center; }
+.s02-sm-num { font-size: 1.1rem; font-weight: 900; color: var(--dark); letter-spacing: -0.03em; line-height: 1; }
+.s02-sm-num span { font-size: 0.66rem; color: var(--green); }
+.s02-sm-label { font-size: 0.57rem; color: var(--gray); line-height: 1.4; margin-top: 3px; }
+.s02-sm-arr { font-size: 0.85rem; color: var(--gray-l); flex-shrink: 0; }
+.s02-barriers-col { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.s02-barrier-row { background: var(--gray-xl); border-radius: 10px; padding: 9px 12px; display: flex; align-items: flex-start; gap: 9px; flex: 1; }
+.s02-brow-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+.s02-brow-title { font-size: 0.81rem; font-weight: 800; color: var(--dark); margin-bottom: 2px; }
+.s02-brow-desc { font-size: 0.69rem; color: var(--gray); line-height: 1.5; }
+.s02-b-pains { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.s02-bpain { background: var(--gray-xl); border-radius: 10px; padding: 9px 12px; display: flex; align-items: flex-start; gap: 9px; flex: 1; }
+.s02-bpain-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+.s02-bpain-title { font-size: 0.81rem; font-weight: 800; color: var(--dark); margin-bottom: 2px; }
+.s02-bpain-desc { font-size: 0.69rem; color: var(--gray); line-height: 1.5; }
+.s02-connector { margin-top: 12px; background: var(--dark); border-radius: 11px; padding: 11px 18px; display: flex; align-items: center; gap: 10px; }
+.s02-conn-item { font-size: 0.74rem; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 5px; flex: 1; justify-content: center; }
+.s02-conn-item::before { content: '·'; color: var(--green-l); }
+.s02-conn-arr { color: var(--green-l); font-size: 1.2rem; flex-shrink: 0; }
+.s02-conn-cta { font-size: 0.8rem; font-weight: 700; color: var(--green-l); white-space: nowrap; }
+
+/* ══════════════  SLIDE 03 · OPPORTUNITY REDESIGN  ══════════════ */
+.s03-opp-heading { font-size: 1.85rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 4px; line-height: 1.25; }
+.s03-opp-heading em { color: var(--green); font-style: normal; }
+.s03-opp-sub { font-size: 0.82rem; color: var(--gray); margin-bottom: 14px; }
+.s03-opp-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 14px; }
+.s03-opp-stat { background: var(--gray-xl); border-radius: 14px; padding: 20px 22px; display: flex; flex-direction: column; gap: 5px; }
+.s03-opp-stat.featured { background: var(--dark); }
+.s03-opp-stat-num { font-size: 2.6rem; font-weight: 900; color: var(--green); letter-spacing: -0.04em; line-height: 1; }
+.s03-opp-stat.featured .s03-opp-stat-num { color: var(--green-l); }
+.s03-opp-stat-num sup { font-size: 1.2rem; vertical-align: super; }
+.s03-opp-stat-label { font-size: 0.8rem; font-weight: 700; color: var(--dark); }
+.s03-opp-stat.featured .s03-opp-stat-label { color: rgba(255,255,255,0.85); }
+.s03-opp-stat-desc { font-size: 0.7rem; color: var(--gray); line-height: 1.55; }
+.s03-opp-stat.featured .s03-opp-stat-desc { color: rgba(255,255,255,0.45); }
+.s03-opp-feats { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; flex: 1; min-height: 0; }
+.s03-opp-feat { background: var(--green-bg); border: 1px solid rgba(22,163,74,0.2); border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; }
+.s03-opp-feat-title { font-size: 0.77rem; font-weight: 700; color: var(--green-d); margin-bottom: 3px; }
+.s03-opp-feat-desc { font-size: 0.69rem; color: var(--dark2); line-height: 1.55; }
+
+/* ══════════════  SLIDE 04 · MARKET  ══════════════ */
+.s04 { background: var(--white); }
+.s04-body {
+  padding: 24px 56px 22px; height: calc(100% - 57px);
+  display: flex; flex-direction: column;
+}
+.s04-heading { font-size: 1.9rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 4px; }
+.s04-heading em { color: var(--green); font-style: normal; }
+.s04-sub { font-size: 0.84rem; color: var(--gray); margin-bottom: 18px; }
+.s04-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; flex: 1; align-items: center; min-height: 0; }
+/* TAM/SAM/SOM funnel */
+.s04-funnel { display: flex; flex-direction: column; gap: 10px; }
+.s04-fi { border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+.s04-fi.tam { background: rgba(22,163,74,0.12); border: 1px solid rgba(22,163,74,0.35); }
+.s04-fi.sam { background: rgba(22,163,74,0.07); border: 1px solid rgba(22,163,74,0.22); margin: 0 28px; }
+.s04-fi.som { background: rgba(22,163,74,0.04); border: 1px solid rgba(22,163,74,0.14); margin: 0 56px; }
+.s04-fi-label { display: flex; flex-direction: column; gap: 3px; }
+.s04-fi-tag { font-size: 0.64rem; font-weight: 700; color: var(--green-d); letter-spacing: 0.12em; text-transform: uppercase; }
+.s04-fi-text { font-size: 0.8rem; color: var(--gray); }
+.s04-fi-num { font-size: 1.45rem; font-weight: 900; color: var(--dark); letter-spacing: -0.03em; white-space: nowrap; }
+/* right column */
+.s04-right { display: flex; flex-direction: column; gap: 11px; }
+.s04-sc { background: var(--gray-xl); border-radius: 12px; padding: 14px 18px; }
+.s04-sc-title { font-size: 0.63rem; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+.s04-sc-num { font-size: 1.6rem; font-weight: 900; color: var(--green); letter-spacing: -0.03em; margin-bottom: 2px; }
+.s04-sc-desc { font-size: 0.73rem; color: var(--gray); line-height: 1.5; }
+.s04-why { background: var(--green-bg); border: 1px solid rgba(22,163,74,0.25); border-radius: 12px; padding: 13px 16px; }
+.s04-why-title { font-size: 0.63rem; font-weight: 700; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 9px; }
+.s04-why-items { display: flex; flex-direction: column; gap: 5px; }
+.s04-why-item { display: flex; gap: 8px; font-size: 0.73rem; color: var(--dark2); line-height: 1.4; }
+.s04-why-item::before { content: '✦'; color: var(--green); font-size: 0.56rem; margin-top: 3px; flex-shrink: 0; }
+
+/* ══════════════  SLIDE 05 · BM OVERVIEW  ══════════════ */
+.s05 { background: #f8fbf8; }
+.s05-body {
+  padding: 24px 56px 22px; height: calc(100% - 57px);
+  display: flex; flex-direction: column;
+}
+.s05-heading { font-size: 1.9rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 4px; }
+.s05-heading em { color: var(--green); font-style: normal; }
+.s05-sub { font-size: 0.84rem; color: var(--gray); margin-bottom: 16px; }
+/* diagram */
+.s05-diagram {
+  display: grid;
+  grid-template-columns: 1fr 56px 320px 56px 1fr;
+  align-items: center; flex: 1; min-height: 0;
+}
+.s05-target {
+  background: white; border-radius: 18px;
+  border: 1.5px solid var(--gray-xl);
+  padding: 20px 22px; height: 100%;
+  display: flex; flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.s05-target-tag {
+  font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 100px;
+  display: inline-block; margin-bottom: 12px; align-self: flex-start;
+}
+.s05-ta-tag { background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.25); color: var(--green-d); }
+.s05-tb-tag { background: rgba(15,23,42,0.08); border: 1px solid rgba(15,23,42,0.18); color: var(--dark2); }
+.s05-target-pain {
+  font-size: 0.88rem; font-weight: 700; color: var(--dark);
+  margin-bottom: 10px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--gray-xl); line-height: 1.4;
+}
+.s05-segs { display: flex; flex-direction: column; gap: 7px; flex: 1; }
+.s05-seg {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; border-radius: 10px;
+  background: var(--gray-xl); font-size: 0.78rem; color: var(--dark2);
+}
+.s05-seg-icon { font-size: 1.1rem; flex-shrink: 0; }
+.s05-seg-info { display: flex; flex-direction: column; gap: 1px; }
+.s05-seg-name { font-weight: 700; color: var(--dark); font-size: 0.79rem; }
+.s05-seg-desc { font-size: 0.66rem; color: var(--gray); }
+.s05-value {
+  margin-top: 10px; background: var(--green-bg);
+  border: 1px solid rgba(22,163,74,0.2); border-radius: 10px;
+  padding: 10px 13px;
+}
+.s05-value-title { font-size: 0.62rem; font-weight: 700; color: var(--green); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; }
+.s05-value-items { display: flex; flex-direction: column; gap: 4px; }
+.s05-value-item { font-size: 0.73rem; color: var(--dark2); display: flex; gap: 7px; line-height: 1.4; }
+.s05-value-item::before { content: '→'; color: var(--green); font-size: 0.68rem; flex-shrink: 0; margin-top: 2px; }
+.s05-value-b {
+  margin-top: 10px; background: var(--gray-xl);
+  border-radius: 10px; padding: 10px 13px;
+}
+.s05-value-b .s05-value-title { color: var(--dark2); border-bottom: none; }
+/* center platform */
+.s05-platform {
+  background: var(--dark); border-radius: 18px;
+  border: 2px solid var(--green); padding: 24px 20px;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; text-align: center;
+  height: 100%; box-shadow: 0 8px 40px rgba(22,163,74,0.25);
+}
+.s05-platform-tag {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--green-l); background: rgba(74,222,128,0.1);
+  border: 1px solid rgba(74,222,128,0.25); border-radius: 100px;
+  padding: 3px 10px; margin-bottom: 14px;
+}
+.s05-platform-name { font-size: 1.3rem; font-weight: 900; color: white; letter-spacing: -0.03em; margin-bottom: 6px; }
+.s05-platform-resources {
+  display: flex; flex-direction: column; gap: 7px;
+  width: 100%; margin-top: 10px;
+}
+.s05-resource {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 9px; padding: 7px 12px;
+  font-size: 0.74rem; color: rgba(255,255,255,0.75);
+  font-weight: 600; text-align: center;
+}
+.s05-platform-rev {
+  margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+}
+.s05-rev-row {
+  font-size: 0.67rem; color: rgba(255,255,255,0.45);
+  text-align: center; line-height: 1.5;
+}
+.s05-rev-row strong { color: var(--green-l); font-size: 0.71rem; }
+/* arrows */
+.s05-arrow {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0; height: 100%;
+}
+.s05-arrow-line {
+  flex: 1; width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(22,163,74,0.35) 30%, rgba(22,163,74,0.35) 70%, transparent);
+}
+.s05-arrow-mid {
+  padding: 8px 0; display: flex; flex-direction: column;
+  align-items: center; gap: 6px; flex-shrink: 0;
+}
+.s05-arrow-badge {
+  background: white; border: 1.5px solid rgba(22,163,74,0.3);
+  border-radius: 9px; padding: 5px 9px;
+  font-size: 0.63rem; font-weight: 700; color: var(--green);
+  text-align: center; line-height: 1.35; white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(22,163,74,0.1);
+}
+.s05-arrow-badge.rev { background: var(--green-bg); border-color: rgba(22,163,74,0.4); color: var(--green-d); }
+
+/* ══════════════  SLIDE 06 · SPACE  ══════════════ */
+/* reuse original s-sp styles */
+.s-sp { background: var(--white); }
+.s-sp-body { height: calc(100% - 57px); display: grid; grid-template-columns: 400px 1fr; }
+.s-sp-hero { background: var(--dark); padding: 32px 36px 28px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.s-sp-hero::before { content: '06'; position: absolute; right: -20px; bottom: -48px; font-size: 200px; font-weight: 900; color: rgba(255,255,255,0.025); line-height: 1; pointer-events: none; letter-spacing: -0.06em; }
+.s-sp-hero-tag { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.14em; color: var(--green-l); opacity: 0.8; margin-bottom: 14px; }
+.s-sp-hero-title { font-size: 1.55rem; font-weight: 900; color: white; letter-spacing: -0.035em; line-height: 1.22; margin-bottom: 10px; }
+.s-sp-hero-title em { color: var(--green-l); font-style: normal; }
+.s-sp-hero-desc { font-size: 0.73rem; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 18px; }
+.s-sp-tiles { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 18px; }
+.s-sp-tile { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; padding: 12px 8px; text-align: center; }
+.s-sp-tile-val { font-size: 1.45rem; font-weight: 900; color: var(--green-l); letter-spacing: -0.04em; line-height: 1; margin-bottom: 5px; }
+.s-sp-tile-label { font-size: 0.6rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+.s-sp-feats { display: flex; flex-direction: column; gap: 8px; flex: 1; margin-bottom: 16px; }
+.s-sp-feat { display: flex; align-items: flex-start; gap: 8px; font-size: 0.72rem; color: rgba(255,255,255,0.55); line-height: 1.55; }
+.s-sp-feat strong { color: rgba(255,255,255,0.85); }
+.s-sp-feat::before { content: ''; width: 4px; height: 4px; background: var(--green); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+.s-sp-testbed { background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.28); border-radius: 9px; padding: 11px 13px; font-size: 0.7rem; color: rgba(255,255,255,0.6); line-height: 1.65; }
+.s-sp-testbed strong { color: var(--green-l); }
+.s-sp-info { padding: 28px 40px 24px; display: flex; flex-direction: column; justify-content: center; }
+.s-sp-info-head { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+.s-sp-note { margin-top: 11px; padding: 11px 15px; background: var(--green-bg); border: 1px solid rgba(22,163,74,0.2); border-radius: 10px; font-size: 0.72rem; color: var(--dark2); line-height: 1.65; }
+.s-sp-note strong { color: var(--green-d); }
+/* comparison table inside s-sp */
+.cmp-table { width: 100%; border-collapse: collapse; }
+.cmp-table thead tr th { padding: 10px 12px; font-size: 0.73rem; font-weight: 700; text-align: center; background: var(--dark); color: rgba(255,255,255,0.6); }
+.cmp-table thead tr th:first-child { border-radius: 10px 0 0 10px; text-align: left; padding-left: 14px; }
+.cmp-table thead tr th:last-child { border-radius: 0 10px 10px 0; }
+.cmp-table thead tr th.cog-h { background: var(--green-d); color: white; font-weight: 800; }
+.cmp-table tbody tr td { padding: 8px 12px; font-size: 0.77rem; color: var(--dark2); text-align: center; background: var(--gray-xl); border-bottom: 1px solid white; vertical-align: middle; }
+.cmp-table tbody tr td:first-child { text-align: left; padding-left: 14px; font-weight: 600; color: var(--dark); background: rgba(226,232,240,0.5); }
+.cmp-table tbody tr:last-child td { border-bottom: none; }
+.cmp-table tbody tr td.cog-hi { background: rgba(22,163,74,0.08); font-weight: 700; color: var(--green-d); }
+
+/* ══════════════  SLIDE 07 · TECHNOLOGY  ══════════════ */
+.s-tk { background: var(--white); }
+.s-tk-body { padding: 26px 56px 22px; height: calc(100% - 57px); display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: start; }
+.s-tk-left { display: flex; flex-direction: column; }
+.s-tk-heading { font-size: 1.75rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 5px; line-height: 1.2; }
+.s-tk-heading em { color: var(--green); font-style: normal; }
+.s-tk-sub { font-size: 0.77rem; color: var(--gray); margin-bottom: 18px; line-height: 1.65; }
+.s-tk-feats { display: flex; flex-direction: column; gap: 11px; }
+.s-tk-feat { display: flex; align-items: flex-start; gap: 12px; }
+.s-tk-feat-icon { width: 32px; height: 32px; background: var(--green-bg); border: 1px solid rgba(22,163,74,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.58rem; font-weight: 900; color: var(--green); flex-shrink: 0; letter-spacing: -0.02em; }
+.s-tk-feat-title { font-size: 0.85rem; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+.s-tk-feat-desc { font-size: 0.72rem; color: var(--gray); line-height: 1.5; }
+/* right feature table */
+.s-tk-right { display: flex; flex-direction: column; gap: 0; }
+.s-tk-table { width: 100%; border-collapse: collapse; }
+.s-tk-table thead tr th { padding: 10px 14px; font-size: 0.72rem; font-weight: 700; background: var(--dark); color: rgba(255,255,255,0.6); text-align: left; }
+.s-tk-table thead tr th:first-child { border-radius: 10px 0 0 10px; width: 26%; }
+.s-tk-table thead tr th:nth-child(2) { width: 37%; }
+.s-tk-table thead tr th:last-child { border-radius: 0 10px 10px 0; }
+.s-tk-table tbody tr td { padding: 9px 14px; font-size: 0.76rem; color: var(--dark2); border-bottom: 1px solid var(--gray-xl); vertical-align: top; line-height: 1.55; }
+.s-tk-table tbody tr:last-child td { border-bottom: none; }
+.s-tk-table tbody tr td:first-child { font-weight: 700; color: var(--dark); font-size: 0.77rem; }
+.s-tk-mob-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(22,163,74,0.08); border: 1px solid rgba(22,163,74,0.2);
+  border-radius: 6px; padding: 2px 7px;
+  font-size: 0.63rem; font-weight: 700; color: var(--green); margin-left: 5px;
+}
+.s-tk-note { margin-top: 12px; background: var(--gray-xl); border-radius: 11px; padding: 12px 16px; font-size: 0.72rem; color: var(--dark2); line-height: 1.6; }
+.s-tk-note strong { color: var(--dark); }
+
+/* ══════════════  SLIDE 08 · 유통 & 커뮤니티  ══════════════ */
+.s08 { background: var(--white); }
+.s08-body { padding: 28px 56px 24px; height: calc(100% - 57px); display: flex; flex-direction: column; }
+.s08-heading { font-size: 1.85rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 5px; }
+.s08-heading em { color: var(--green); font-style: normal; }
+.s08-sub { font-size: 0.84rem; color: var(--gray); margin-bottom: 16px; }
+.s08-split { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; flex: 1; min-height: 0; }
+.s08-divider { background: var(--gray-xl); margin: 0; }
+.s08-left { padding-right: 28px; display: flex; flex-direction: column; }
+.s08-right { padding-left: 28px; display: flex; flex-direction: column; }
+.s08-panel-title { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; color: var(--green); margin-bottom: 12px; }
+.s08-channels { display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px; }
+.s08-channel { display: flex; align-items: center; gap: 12px; background: var(--gray-xl); border-radius: 10px; padding: 8px 13px; }
+.s08-channel-icon { font-size: 1.05rem; flex-shrink: 0; }
+.s08-channel-title { font-size: 0.81rem; font-weight: 700; color: var(--dark); }
+.s08-channel-desc { font-size: 0.7rem; color: var(--gray); }
+.s08-tags { display: flex; flex-direction: column; gap: 8px; }
+.s08-tag { background: var(--green-bg); border: 1px solid rgba(22,163,74,0.22); border-radius: 10px; padding: 10px 13px; }
+.s08-tag-title { font-size: 0.79rem; font-weight: 700; color: var(--green-d); margin-bottom: 3px; }
+.s08-tag-desc { font-size: 0.71rem; color: var(--dark2); line-height: 1.5; }
+.s08-co-items { display: flex; flex-direction: column; gap: 9px; }
+.s08-co-item { display: flex; align-items: flex-start; gap: 12px; background: var(--gray-xl); border-radius: 10px; padding: 12px 14px; }
+.s08-co-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.s08-co-title { font-size: 0.82rem; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+.s08-co-desc { font-size: 0.71rem; color: var(--gray); line-height: 1.5; }
+.s08-viral { margin-top: auto; padding-top: 12px; }
+.s08-viral-inner { background: var(--dark); border-radius: 12px; padding: 13px 20px; }
+.s08-viral-text { font-size: 0.84rem; color: rgba(255,255,255,0.7); }
+.s08-viral-text strong { color: white; }
+.s08-viral-label { font-size: 0.7rem; font-weight: 700; color: var(--green-l); letter-spacing: 0.04em; margin-top: 4px; }
+
+/* ══════════════  SLIDE 09 · 독립 로드맵  ══════════════ */
+.s09 { background: var(--white); }
+.s09-body { padding: 28px 56px 24px; height: calc(100% - 57px); display: flex; flex-direction: column; }
+.s09-heading { font-size: 1.85rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 5px; }
+.s09-heading em { color: var(--green); font-style: normal; }
+.s09-sub { font-size: 0.85rem; color: var(--gray); margin-bottom: 22px; }
+.s09-flow { display: grid; grid-template-columns: 1fr 32px 1fr 32px 1fr 32px 1fr; align-items: center; margin-bottom: 20px; }
+.s09-step { background: var(--gray-xl); border-radius: 14px; padding: 20px 18px; display: flex; flex-direction: column; gap: 5px; }
+.s09-step.accent { background: var(--dark); }
+.s09-step-num { font-size: 0.64rem; font-weight: 800; letter-spacing: 0.12em; color: var(--green); }
+.s09-step.accent .s09-step-num { color: var(--green-l); }
+.s09-step-title { font-size: 0.96rem; font-weight: 800; color: var(--dark); line-height: 1.3; }
+.s09-step.accent .s09-step-title { color: white; }
+.s09-step-desc { font-size: 0.73rem; color: var(--gray); line-height: 1.5; }
+.s09-step.accent .s09-step-desc { color: rgba(255,255,255,0.5); }
+.s09-arrow { text-align: center; font-size: 1.3rem; color: var(--green-l); font-weight: 300; }
+.s09-support { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; flex: 1; }
+.s09-sup { background: var(--green-bg); border: 1px solid rgba(22,163,74,0.22); border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 5px; }
+.s09-sup-title { font-size: 0.83rem; font-weight: 700; color: var(--green-d); }
+.s09-sup-desc { font-size: 0.73rem; color: var(--dark2); line-height: 1.6; }
+.s09-quote { margin-top: 16px; background: var(--dark); border-radius: 12px; padding: 13px 28px; }
+.s09-quote-text { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.65; }
+.s09-quote-text em { color: var(--green-l); font-style: normal; font-weight: 700; }
+
+/* ══════════════  SLIDE 10 · 서비스 이용 5단계  ══════════════ */
+.s10 { background: var(--white); }
+.s10-body { padding: 28px 56px 24px; height: calc(100% - 57px); display: flex; flex-direction: column; }
+.s10-heading { font-size: 1.85rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 5px; }
+.s10-heading em { color: var(--green); font-style: normal; }
+.s10-sub { font-size: 0.84rem; color: var(--gray); margin-bottom: 14px; }
+.s10-flow { display: grid; grid-template-columns: 1fr 36px 1fr 36px 1fr 36px 1fr 36px 1fr; align-items: stretch; flex: 1; min-height: 0; margin-bottom: 14px; }
+.s10-step { background: var(--gray-xl); border-radius: 16px; padding: 20px 15px; display: flex; flex-direction: column; gap: 7px; }
+.s10-step.user { border-top: 3px solid var(--green); }
+.s10-step.admin { border-top: 3px solid #6366f1; }
+.s10-step.both { border-top: 3px solid #f59e0b; }
+.s10-step-num { font-size: 0.64rem; font-weight: 800; letter-spacing: 0.1em; color: var(--gray); }
+.s10-step-title { font-size: 0.95rem; font-weight: 800; color: var(--dark); line-height: 1.25; }
+.s10-step-desc { font-size: 0.71rem; color: var(--gray); line-height: 1.65; flex: 1; }
+.s10-step-who { margin-top: 8px; font-size: 0.63rem; font-weight: 700; padding: 3px 8px; border-radius: 20px; display: inline-block; }
+.s10-step.user .s10-step-who { background: rgba(22,163,74,0.12); color: var(--green-d); }
+.s10-step.admin .s10-step-who { background: rgba(99,102,241,0.12); color: #4338ca; }
+.s10-step.both .s10-step-who { background: rgba(245,158,11,0.12); color: #b45309; }
+.s10-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--green-l); }
+.s10-legend { display: flex; gap: 20px; justify-content: center; margin-bottom: 12px; }
+.s10-legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: var(--gray); }
+.s10-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.s10-legend-dot.user { background: var(--green); }
+.s10-legend-dot.admin { background: #6366f1; }
+.s10-legend-dot.both { background: #f59e0b; }
+.s10-principle { background: var(--dark); border-radius: 12px; padding: 13px 28px; display: flex; gap: 40px; align-items: center; }
+.s10-principle-item { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+.s10-principle-item strong { color: white; }
+
+/* ══════════════  SLIDE 11 · 구독 플랜  ══════════════ */
+.s11p { background: #f8fbf8; }
+.s11p-body { padding: 22px 56px 20px; height: calc(100% - 57px); display: flex; flex-direction: column; }
+.s11p-heading { font-size: 1.75rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 4px; }
+.s11p-heading em { color: var(--green); font-style: normal; }
+.s11p-sub { font-size: 0.82rem; color: var(--gray); margin-bottom: 14px; }
+.s11p-cols { display: grid; grid-template-columns: 1.8fr 1px 1.2fr; gap: 0; flex: 1; min-height: 0; }
+.s11p-divider { background: var(--gray-xl); }
+.s11p-left { padding-right: 28px; display: flex; flex-direction: column; gap: 10px; }
+.s11p-right { padding-left: 28px; display: flex; flex-direction: column; gap: 10px; }
+.s11p-target-title { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.14em; color: var(--green); margin-bottom: 8px; }
+/* Plan cards */
+.s11p-plans { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.s11p-plan { background: white; border-radius: 14px; border: 1.5px solid var(--gray-xl); padding: 14px 14px 12px; display: flex; flex-direction: column; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.s11p-plan.featured { border-color: var(--green); box-shadow: 0 4px 20px rgba(22,163,74,0.18); position: relative; }
+.s11p-plan-badge { position: absolute; top: -9px; left: 50%; transform: translateX(-50%); background: var(--green); color: white; font-size: 0.6rem; font-weight: 800; padding: 2px 10px; border-radius: 100px; white-space: nowrap; }
+.s11p-tier { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green); margin-bottom: 4px; }
+.s11p-plan-name { font-size: 0.88rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+.s11p-price { display: flex; align-items: baseline; gap: 2px; margin-bottom: 10px; }
+.s11p-price-num { font-size: 1.5rem; font-weight: 900; color: var(--dark); letter-spacing: -0.03em; }
+.s11p-price-unit { font-size: 0.72rem; color: var(--gray); }
+.s11p-feats { display: flex; flex-direction: column; gap: 5px; }
+.s11p-feat { font-size: 0.72rem; color: var(--dark2); display: flex; align-items: center; gap: 6px; }
+.s11p-feat .ck { color: var(--green); font-size: 0.85rem; }
+.s11p-feat .ck.no { color: #f87171; }
+/* B plans */
+.s11p-b-plans { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.s11p-b-plan { background: white; border-radius: 14px; border: 1.5px solid var(--gray-xl); padding: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+/* Revenue footer */
+.s11p-rev { margin-top: auto; background: var(--dark); border-radius: 12px; padding: 12px 20px; display: flex; gap: 28px; align-items: center; }
+.s11p-rev-item { font-size: 0.8rem; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 7px; }
+.s11p-rev-item strong { color: white; }
+
+/* ══════════════  SLIDE 12 · 경쟁 우위  ══════════════ */
+.s12c { background: var(--white); }
+.s12c-body { padding: 22px 56px 20px; height: calc(100% - 57px); display: flex; flex-direction: column; }
+.s12c-heading { font-size: 1.75rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 5px; }
+.s12c-heading em { color: var(--green); font-style: normal; }
+.s12c-sub { font-size: 0.82rem; color: var(--gray); margin-bottom: 14px; }
+.cmp-table { width: 100%; border-collapse: collapse; flex: 1; }
+.cmp-table thead tr th { padding: 11px 12px; font-size: 0.74rem; font-weight: 700; text-align: center; background: var(--dark); color: rgba(255,255,255,0.6); }
+.cmp-table thead tr th:first-child { border-radius: 10px 0 0 10px; text-align: left; padding-left: 16px; }
+.cmp-table thead tr th:last-child { border-radius: 0 10px 10px 0; }
+.cmp-table thead tr th.cog { background: var(--green); color: white; font-weight: 800; font-size: 0.83rem; }
+.cmp-table tbody tr td { padding: 9px 12px; font-size: 0.8rem; color: var(--dark2); text-align: center; border-bottom: 1px solid var(--gray-xl); }
+.cmp-table tbody tr td:first-child { text-align: left; padding-left: 16px; font-weight: 600; color: var(--dark); }
+.cmp-table tbody tr:last-child td { border-bottom: none; }
+.cmp-table tbody tr td.cog-col { background: rgba(22,163,74,0.06); font-weight: 700; color: var(--green); }
+.ck2 { color: var(--green); font-size: 1.05rem; }
+.cr { color: #f87171; font-size: 0.95rem; }
+.cm { color: #f59e0b; font-size: 0.8rem; font-weight: 700; }
+.s12c-banner { margin-top: 14px; background: var(--dark); border-radius: 12px; padding: 13px 24px; display: flex; align-items: center; justify-content: space-between; }
+.s12c-banner-text { font-size: 0.88rem; color: rgba(255,255,255,0.7); }
+.s12c-banner-text strong { color: white; }
+.s12c-banner-label { font-size: 0.74rem; font-weight: 700; color: var(--green-l); letter-spacing: 0.04em; }
+
+/* ══════════════  SLIDE 13 · GTM & 확장 로드맵  ══════════════ */
+.s13g { background: var(--white); }
+.s13g-body { padding: 22px 56px 20px; height: calc(100% - 57px); display: flex; flex-direction: column; }
+.s13g-heading { font-size: 1.75rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 4px; }
+.s13g-heading em { color: var(--green); font-style: normal; }
+.s13g-sub { font-size: 0.82rem; color: var(--gray); margin-bottom: 14px; }
+.s13g-cols { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; flex: 1; min-height: 0; }
+.s13g-divider { background: var(--gray-xl); }
+.s13g-left { padding-right: 28px; display: flex; flex-direction: column; }
+.s13g-right { padding-left: 28px; display: flex; flex-direction: column; }
+.s13g-panel-title { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.14em; color: var(--green); margin-bottom: 10px; }
+.s13g-table { width: 100%; border-collapse: collapse; flex: 1; }
+.s13g-table thead tr th { padding: 9px 12px; font-size: 0.71rem; font-weight: 700; background: var(--dark); color: rgba(255,255,255,0.6); text-align: left; }
+.s13g-table thead tr th:first-child { border-radius: 8px 0 0 8px; width: 15%; }
+.s13g-table thead tr th:last-child { border-radius: 0 8px 8px 0; }
+.s13g-table tbody tr td { padding: 9px 12px; font-size: 0.77rem; border-bottom: 1px solid var(--gray-xl); vertical-align: middle; line-height: 1.5; }
+.s13g-table tbody tr:last-child td { border-bottom: none; }
+.s13g-table tbody tr td:first-child { font-size: 0.72rem; font-weight: 800; color: var(--green); text-align: center; background: rgba(22,163,74,0.07); }
+.s13g-table tbody tr td:nth-child(2) { font-weight: 700; color: var(--dark); width: 28%; }
+.s13g-table tbody tr td:nth-child(3) { color: var(--dark2); }
+.s13g-kpi { margin-top: 12px; background: var(--green-bg); border: 1px solid rgba(22,163,74,0.22); border-radius: 12px; padding: 12px 18px; }
+.s13g-kpi-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 3px; }
+.s13g-kpi-value { font-size: 1rem; font-weight: 800; color: var(--dark); }
+.s13g-kpi-desc { font-size: 0.72rem; color: var(--gray); margin-top: 2px; }
+.s13g-phases { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.s13g-phase { background: var(--gray-xl); border-radius: 12px; padding: 12px 16px; display: flex; align-items: flex-start; gap: 14px; position: relative; overflow: hidden; }
+.s13g-phase::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
+.s13g-p1::before { background: var(--green-l); }
+.s13g-p2::before { background: var(--green); }
+.s13g-p3::before { background: #15803d; }
+.s13g-phase-tag { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.1em; color: var(--green); min-width: 58px; padding-top: 2px; }
+.s13g-phase-period { font-size: 0.7rem; color: var(--gray); margin-bottom: 3px; }
+.s13g-phase-name { font-size: 0.9rem; font-weight: 800; color: var(--dark); margin-bottom: 5px; }
+.s13g-phase-desc { font-size: 0.74rem; color: var(--dark2); line-height: 1.55; }
+.s13g-phase-goal { margin-top: 6px; font-size: 0.71rem; font-weight: 700; color: var(--green-d); }
+
+/* ══════════════  SLIDE 14 · 초기 투자  ══════════════ */
+.s14p { background: var(--white); }
+.s14p-body { padding: 26px 56px 22px; height: calc(100% - 57px); display: flex; flex-direction: column; }
+.s14p-heading { font-size: 1.75rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 4px; }
+.s14p-heading em { color: var(--green); font-style: normal; }
+.s14p-sub { font-size: 0.82rem; color: var(--gray); margin-bottom: 16px; }
+.s14p-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; flex: 1; min-height: 0; }
+.s14p-section { display: flex; flex-direction: column; }
+.s14p-sec-title { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+.s14p-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.s14p-table thead tr th { padding: 9px 12px; font-size: 0.71rem; font-weight: 700; background: var(--dark2); color: rgba(255,255,255,0.65); text-align: left; }
+.s14p-table thead tr th:first-child { border-radius: 8px 0 0 0; }
+.s14p-table thead tr th:last-child { border-radius: 0 8px 0 0; text-align: right; }
+.s14p-table tbody tr td { padding: 9px 12px; border-bottom: 1px solid var(--gray-xl); color: var(--dark2); }
+.s14p-table tbody tr.total td { font-weight: 800; background: var(--dark); color: white; }
+.s14p-table tbody tr.total td:first-child { border-radius: 0 0 0 8px; }
+.s14p-table tbody tr.total td:last-child { border-radius: 0 0 8px 0; color: var(--green-l); }
+.s14p-table tbody tr td:last-child { text-align: right; font-weight: 700; color: var(--dark); }
+.s14p-note { margin-top: 10px; font-size: 0.71rem; color: var(--gray); line-height: 1.65; }
+.s14p-summary { margin-top: 14px; background: var(--dark); border-radius: 14px; padding: 16px 20px; }
+.s14p-summary-title { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-l); margin-bottom: 12px; }
+.s14p-sum-rows { display: flex; flex-direction: column; gap: 8px; }
+.s14p-sum-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem; color: rgba(255,255,255,0.6); }
+.s14p-sum-row.total-row { padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 1.05rem; font-weight: 800; color: white; }
+.s14p-sum-row.total-row span:last-child { color: var(--green-l); font-size: 1.2rem; }
+
+/* ══════════════  SLIDE 15 · BEP & P&L  ══════════════ */
+.s15p { background: var(--white); }
+.s15p-body { padding: 22px 56px 20px; height: calc(100% - 57px); display: flex; flex-direction: column; }
+.s15p-heading { font-size: 1.75rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 4px; }
+.s15p-heading em { color: var(--green); font-style: normal; }
+.s15p-sub { font-size: 0.82rem; color: var(--gray); margin-bottom: 14px; }
+.s15p-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+.s15p-metric { background: var(--gray-xl); border-radius: 12px; padding: 12px 14px; text-align: center; }
+.s15p-metric-label { font-size: 0.6rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 4px; }
+.s15p-metric-value { font-size: 1.45rem; font-weight: 900; color: var(--green); letter-spacing: -0.03em; }
+.s15p-metric-sub { font-size: 0.64rem; color: var(--gray); margin-top: 3px; line-height: 1.4; }
+.s15p-table { width: 100%; border-collapse: collapse; flex: 1; }
+.s15p-table thead tr th { padding: 9px 12px; font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.65); background: var(--dark2); text-align: center; }
+.s15p-table thead tr th:first-child { text-align: left; border-radius: 10px 0 0 10px; }
+.s15p-table thead tr th:last-child { border-radius: 0 10px 10px 0; }
+.s15p-table thead tr th.phase-h { color: white; font-weight: 800; background: var(--green); }
+.s15p-table tbody tr td { padding: 9px 12px; font-size: 0.8rem; color: var(--dark2); text-align: center; border-bottom: 1px solid var(--gray-xl); }
+.s15p-table tbody tr td:first-child { text-align: left; font-weight: 700; color: var(--dark); }
+.s15p-table tbody tr td.phase-col { background: rgba(22,163,74,0.04); }
+.s15p-table tbody tr.profit-row td { font-weight: 800; font-size: 0.84rem; }
+.s15p-table tbody tr.profit-row td.win { color: var(--green-d); }
+.s15p-highlight { margin-top: 12px; background: var(--dark); border-radius: 12px; padding: 12px 24px; display: flex; gap: 40px; align-items: center; justify-content: center; }
+.s15p-highlight-item { font-size: 0.88rem; color: rgba(255,255,255,0.6); text-align: center; }
+.s15p-highlight-item strong { color: var(--green-l); font-size: 1rem; display: block; margin-top: 3px; }
+
+/* ══════════════  SLIDE 16 · TEAM  ══════════════ */
+.s16 { background: var(--white); }
+.s16-body { padding: 22px 56px 20px; height: calc(100% - 57px); display: flex; flex-direction: column; }
+.s16-heading { font-size: 1.75rem; font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 4px; }
+.s16-heading em { color: var(--green); font-style: normal; }
+.s16-sub { font-size: 0.82rem; color: var(--gray); margin-bottom: 14px; }
+
+/* 메인 레이아웃: CEO 크게 좌측 + 나머지 2명 우측 */
+.s16-grid { display: grid; grid-template-columns: 1fr 1px 1fr 1px 1fr; gap: 0; flex: 1; min-height: 0; margin-bottom: 14px; }
+.s16-divider { background: var(--gray-xl); }
+
+/* 공통 멤버 카드 */
+.s16-member { padding: 0 22px; display: flex; flex-direction: column; }
+.s16-member:first-child { padding-left: 0; }
+.s16-member:last-child { padding-right: 0; }
+
+.s16-mem-header { display: flex; flex-direction: row; align-items: center; gap: 16px; margin-bottom: 12px; }
+.s16-avatar {
+  width: 164px; height: 164px; border-radius: 50%; flex-shrink: 0;
+  object-fit: cover; object-position: center top;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.s16-avatar.ceo { width: 164px; height: 164px; border-radius: 50%; }
+.s16-mem-info { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex: 1; }
+.s16-mem-name { font-size: 1.05rem; font-weight: 900; color: var(--dark); letter-spacing: -0.02em; text-align: center; }
+.s16-mem-name.ceo { font-size: 1.2rem; }
+
+.s16-role-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 100px; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.08em; margin-bottom: 0; align-self: center;
+}
+.s16-role-badge.ceo { background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.3); color: var(--green-d); }
+.s16-role-badge.cto { background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.25); color: #1d4ed8; }
+.s16-role-badge.cdo { background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.25); color: #6d28d9; }
+
+/* 기술 스택 태그 */
+.s16-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.s16-stk {
+  font-size: 0.6rem; font-weight: 700; padding: 2px 7px; border-radius: 5px;
+  background: var(--gray-xl); color: var(--dark2);
+}
+.s16-stk.hi { background: rgba(22,163,74,0.1); color: var(--green-d); border: 1px solid rgba(22,163,74,0.2); }
+
+/* 경력 항목 */
+.s16-careers { display: flex; flex-direction: column; gap: 7px; flex: 1; }
+.s16-career {
+  background: var(--gray-xl); border-radius: 10px; padding: 9px 12px;
+  display: flex; flex-direction: column; gap: 3px; position: relative; overflow: hidden;
+}
+.s16-career::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
+.s16-career.feat::before { background: var(--green); }
+.s16-career.norm::before { background: var(--gray-l); }
+.s16-career-proj { font-size: 0.75rem; font-weight: 800; color: var(--dark); line-height: 1.3; }
+.s16-career-period { font-size: 0.63rem; color: var(--gray); }
+.s16-career-desc { font-size: 0.68rem; color: var(--dark2); line-height: 1.5; }
+.s16-career-client {
+  align-self: flex-start; font-size: 0.58rem; font-weight: 700;
+  background: rgba(15,23,42,0.07); color: var(--dark2); border-radius: 4px; padding: 1px 6px; margin-top: 2px;
+}
+
+/* 하단 배너 */
+.s16-banner {
+  background: var(--dark); border-radius: 12px;
+  padding: 12px 24px; display: flex; align-items: center;
+  justify-content: space-between; flex-shrink: 0;
+}
+.s16-banner-text { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+.s16-banner-text strong { color: white; }
+.s16-banner-text em { color: var(--green-l); font-style: normal; }
+.s16-need { display: flex; gap: 14px; }
+.s16-need-item {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px; padding: 8px 16px; text-align: center;
+}
+.s16-need-label { font-size: 0.59rem; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; margin-bottom: 3px; }
+.s16-need-value { font-size: 0.88rem; font-weight: 800; color: var(--green-l); }
+
+/* ══════════════  SLIDE 17 · CLOSING  ══════════════ */
+.s17 { background: var(--dark); position: relative; overflow: hidden; }
+.s17::before { content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 70% at 15% 50%, rgba(22,163,74,0.18) 0%, transparent 70%),
+              radial-gradient(ellipse 50% 50% at 85% 20%, rgba(74,222,128,0.1) 0%, transparent 60%);
+}
+.s17-inner { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 80px; }
+.s17-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--green-l); margin-bottom: 28px; }
+.s17-copy { font-size: 1.55rem; font-weight: 700; color: rgba(255,255,255,0.5); line-height: 1.9; margin-bottom: 32px; }
+.s17-copy em { color: white; font-style: normal; }
+.s17-copy strong { color: var(--green-l); font-style: normal; }
+.s17-brand { font-size: 2.8rem; font-weight: 900; color: white; letter-spacing: -0.04em; margin-bottom: 10px; }
+.s17-brand span { color: var(--green-l); }
+.s17-tagline { font-size: 1rem; color: rgba(255,255,255,0.45); letter-spacing: 0.05em; margin-bottom: 40px; }
+.s17-contact { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+.s17-contact-item { font-size: 0.82rem; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 7px; }
+.s17-contact-item strong { color: rgba(255,255,255,0.8); }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════  SLIDE 01 · COVER  ════════════════════════ -->
+<div class="slide s1">
+  <div class="s1-dots"></div>
+  <div class="s1-glow1"></div>
+  <div class="s1-glow2"></div>
+  <div class="s1-inner">
+    <div class="s1-kicker">AgriTech 구독 플랫폼</div>
+    <div class="s1-title">도시에서 <em>귀농</em>을<br>구독하다</div>
+    <div class="s1-divider"></div>
+    <div class="s1-sub">폐공장을 완전밀폐형 스마트온실로 전환하는<br>AgriTech 구독 플랫폼</div>
+    <div class="s1-meta">
+      <div class="s1-meta-item">
+        <div class="mlabel">Company</div>
+        <div class="mval">CoGLabs</div>
+      </div>
+      <div class="s1-meta-item">
+        <div class="mlabel">Category</div>
+        <div class="mval">AgriTech · SaaS</div>
+      </div>
+      <div class="s1-meta-item">
+        <div class="mlabel">Year</div>
+        <div class="mval">2026</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-no">01</div>
+</div>
+
+<!-- ════════════════════════  CHAPTER I  ════════════════════════ -->
+<div class="slide schap">
+  <div class="schap-body">
+    <div class="schap-num">I</div>
+    <div class="schap-line"></div>
+    <div class="schap-title">문제 &amp; 기회</div>
+    <div class="schap-en">Problem &amp; Opportunity</div>
+  </div>
+</div>
+
+<!-- ════════════════════════  SLIDE 02 · PROBLEM A & B  ════════════════════════ -->
+<div class="slide s02">
+  <div class="sh">
+    <div class="sh-chapter">I. 문제 &amp; 기회</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s02-body">
+    <div class="sec-badge badge-r">Problem A &amp; Problem B</div>
+    <div class="s02-heading">귀농 희망자도, 기존 농업인도 — <em>두 타깃 모두 막혀있다</em></div>
+    <div class="s02-sub">귀농을 꿈꾸는 도시민도, 이미 농사를 짓는 농업인도, 서로 다른 이유로 같은 벽 앞에 서 있습니다.</div>
+
+    <div class="s02-cols">
+      <!-- LEFT: Problem A -->
+      <div class="s02-col-l">
+        <div class="s02-col-tag a">Problem A · 귀농 희망자</div>
+        <div class="s02-col-title">세 가지 장벽이 시작을 가로막는다</div>
+        <div class="s02-stats-mini">
+          <div class="s02-sm-stat">
+            <div class="s02-sm-num">37.2<span>%</span></div>
+            <div class="s02-sm-label">귀농 희망 도시민</div>
+          </div>
+          <div class="s02-sm-arr">→</div>
+          <div class="s02-sm-stat">
+            <div class="s02-sm-num">8,400<span>명</span></div>
+            <div class="s02-sm-label">실제 귀농 인구</div>
+          </div>
+          <div class="s02-sm-arr">→</div>
+          <div class="s02-sm-stat">
+            <div class="s02-sm-num">43.5<span>%</span></div>
+            <div class="s02-sm-label">역귀농 비율</div>
+          </div>
+        </div>
+        <div class="s02-barriers-col">
+          <div class="s02-barrier-row">
+            <div class="s02-brow-icon">💰</div>
+            <div>
+              <div class="s02-brow-title">초기 투자 비용</div>
+              <div class="s02-brow-desc">스마트팜 신축 평당 400만 원 이상. 수억 원의 비용이 귀농을 시작조차 못하게 막습니다.</div>
+            </div>
+          </div>
+          <div class="s02-barrier-row">
+            <div class="s02-brow-icon">📵</div>
+            <div>
+              <div class="s02-brow-title">재배 기술 부재</div>
+              <div class="s02-brow-desc">씨앗 심는 법부터 병충해 대처까지 — 경험 없이 홀로 시작하는 건 높은 실패 위험을 감수하는 일입니다.</div>
+            </div>
+          </div>
+          <div class="s02-barrier-row">
+            <div class="s02-brow-icon">😰</div>
+            <div>
+              <div class="s02-brow-title">소득 불확실성</div>
+              <div class="s02-brow-desc">수확 후 팔 곳이 없거나 수익이 나지 않으면 의미가 없습니다. 판로와 소득에 대한 두려움이 모든 것을 멈추게 합니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s02-col-sep"></div>
+
+      <!-- RIGHT: Problem B -->
+      <div class="s02-col-r">
+        <div class="s02-col-tag a">Problem B · 기존 농업인</div>
+        <div class="s02-col-title">농사는 짓지만, 기술도 판로도 없다</div>
+        <div class="s02-b-pains">
+          <div class="s02-bpain">
+            <div class="s02-bpain-icon">🤖</div>
+            <div>
+              <div class="s02-bpain-title">스마트팜 장비 도입: 수천만 원</div>
+              <div class="s02-bpain-desc">IoT 센서·제어 시스템 구축에 2,000~5,000만 원. 소규모 농가에게는 엄두가 나지 않는 비용입니다.</div>
+            </div>
+          </div>
+          <div class="s02-bpain">
+            <div class="s02-bpain-icon">🖥️</div>
+            <div>
+              <div class="s02-bpain-title">운영 기술 인력: 없음</div>
+              <div class="s02-bpain-desc">장비를 도입해도 데이터를 해석하고 자동화 시스템을 운영할 전문 인력이 없습니다.</div>
+            </div>
+          </div>
+          <div class="s02-bpain">
+            <div class="s02-bpain-icon">📦</div>
+            <div>
+              <div class="s02-bpain-title">수확물 판로: 불안정</div>
+              <div class="s02-bpain-desc">중간 유통상에 의존하거나 직접 판로를 뚫어야 하는 부담. 수확해도 제값 받기가 어렵습니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom connector -->
+    <div class="s02-connector">
+      <div class="s02-conn-item">귀농 희망자: 공간·기술·판로 부재</div>
+      <div class="s02-conn-arr">+</div>
+      <div class="s02-conn-item">기존 농업인: 기술·판로 한계</div>
+      <div class="s02-conn-arr">→</div>
+      <div class="s02-conn-cta">CoGLabs가 두 문제를 동시에 해결합니다</div>
+    </div>
+  </div>
+  <div class="slide-no dark">02</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 03 · OPPORTUNITY  ════════════════════════ -->
+<div class="slide s03">
+  <div class="sh">
+    <div class="sh-chapter">I. 문제 &amp; 기회</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s03-body">
+    <div class="sec-badge badge-g">Opportunity</div>
+    <div class="s03-opp-heading">폐공장이 비어 있다 — <em>그리고 해답도 거기에 있다</em></div>
+    <div class="s03-opp-sub">전국 30,000개 유휴 산업시설은 방치된 자산이자, 귀농·농업 문제를 동시에 풀 수 있는 핵심 인프라입니다.</div>
+
+    <!-- 3 big stat cards -->
+    <div class="s03-opp-stats">
+      <div class="s03-opp-stat">
+        <div class="s03-opp-stat-num">30,000<sup>+</sup></div>
+        <div class="s03-opp-stat-label">전국 유휴 산업시설</div>
+        <div class="s03-opp-stat-desc">제조업 구조조정 가속화로 방치 시설이 빠르게 늘고 있습니다.</div>
+      </div>
+      <div class="s03-opp-stat featured">
+        <div class="s03-opp-stat-num">2,700<span style="font-size:1.4rem">만㎡</span></div>
+        <div class="s03-opp-stat-label">전환 가능 유휴 면적</div>
+        <div class="s03-opp-stat-desc">완전밀폐형 스마트온실로 전환 가능한 기존 산업 인프라</div>
+      </div>
+      <div class="s03-opp-stat">
+        <div class="s03-opp-stat-num">1/3</div>
+        <div class="s03-opp-stat-label">신축 대비 구축 비용</div>
+        <div class="s03-opp-stat-desc">기존 전기·수도·구조 활용 시 신축 대비 1/3 수준. 핵심 비용 절감 요인</div>
+      </div>
+    </div>
+
+    <!-- 4 feature highlights -->
+    <div class="s03-opp-feats">
+      <div class="s03-opp-feat">
+        <div class="s03-opp-feat-title">🏭 기존 인프라 활용</div>
+        <div class="s03-opp-feat-desc">전기·수도·구조체를 그대로 활용해 설비 비용을 최소화합니다.</div>
+      </div>
+      <div class="s03-opp-feat">
+        <div class="s03-opp-feat-title">🌿 완전밀폐 환경 제어</div>
+        <div class="s03-opp-feat-desc">외부 기후와 완전히 차단. 온도·습도·CO₂를 AI로 자동 제어합니다.</div>
+      </div>
+      <div class="s03-opp-feat">
+        <div class="s03-opp-feat-title">📅 365일 연속 생산</div>
+        <div class="s03-opp-feat-desc">계절에 관계없이 연속 재배 가능. 매년 최대 6회 수확 사이클 운영.</div>
+      </div>
+      <div class="s03-opp-feat">
+        <div class="s03-opp-feat-title">📍 도심 근접 입지</div>
+        <div class="s03-opp-feat-desc">공업지역 주변 폐공장 활용 → 도심 신선 농산물 직배송 가능.</div>
+      </div>
+    </div>
+
+    <!-- Bottom banner -->
+    <div class="s03-banner">
+      <div class="s03-banner-problems">
+        <div class="s03-banner-prob">귀농 희망자의 공간·기술·판로 부재</div>
+        <div class="s03-banner-prob">기존 농업인의 기술·판로 한계</div>
+        <div class="s03-banner-prob">전국 폐공장 30,000개 방치</div>
+      </div>
+      <div class="s03-banner-arrow">→</div>
+      <div class="s03-banner-solution">
+        <div class="s03-banner-solution-name">CoGLabs 플랫폼</div>
+        <div class="s03-banner-solution-sub">세 가지 문제, 하나의 해답</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-no dark">03</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 04 · MARKET  ════════════════════════ -->
+<div class="slide s04">
+  <div class="sh">
+    <div class="sh-chapter">I. 문제 &amp; 기회</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s04-body">
+    <div class="sec-badge badge-g">Market Size &amp; Why Now</div>
+    <div class="s04-heading">수요·공간·기술, <em>세 가지가 동시에 무르익었다</em></div>
+    <div class="s04-sub">국내 스마트팜·귀농 생태계는 빠르게 성장하는 거대 시장입니다. 지금이 최적의 진입 타이밍입니다.</div>
+
+    <div class="s04-grid">
+      <!-- Left: funnel -->
+      <div class="s04-funnel">
+        <div class="s04-fi tam">
+          <div class="s04-fi-label">
+            <div class="s04-fi-tag">TAM · 전체 시장</div>
+            <div class="s04-fi-text">귀농·도시농업 + 국내 스마트팜 서비스</div>
+          </div>
+          <div class="s04-fi-num">1조 2,000억원</div>
+        </div>
+        <div class="s04-fi sam">
+          <div class="s04-fi-label">
+            <div class="s04-fi-tag">SAM · 유효 시장</div>
+            <div class="s04-fi-text">귀농 희망 30~50대 구독 관심층</div>
+          </div>
+          <div class="s04-fi-num">약 700억원</div>
+        </div>
+        <div class="s04-fi som">
+          <div class="s04-fi-label">
+            <div class="s04-fi-tag">SOM · 목표 시장</div>
+            <div class="s04-fi-text">Phase별 시설 운영 기반 확보 가능 시장</div>
+          </div>
+          <div class="s04-fi-num">1.2억 → 3.6억 → 12억</div>
+        </div>
+      </div>
+
+      <!-- Right: stats + why now -->
+      <div class="s04-right">
+        <div class="s04-sc">
+          <div class="s04-sc-title">국내 스마트팜 시장 규모 (2025)</div>
+          <div class="s04-sc-num">6,700억원</div>
+          <div class="s04-sc-desc">연평균 15% 이상 성장 중. 2030년 약 1.3조원 돌파 전망 (CAGR ~15%)</div>
+        </div>
+        <div class="s04-sc">
+          <div class="s04-sc-title">귀농 희망 잠재 수요층</div>
+          <div class="s04-sc-num">약 780만 명</div>
+          <div class="s04-sc-desc">도시 가구원 2,100만 명 × 37.2%. 40대 이하 비율 42%로 디지털 수용성 높음</div>
+        </div>
+        <div class="s04-why">
+          <div class="s04-why-title">Why Now — 지금이 적기인 5가지 이유</div>
+          <div class="s04-why-items">
+            <div class="s04-why-item">귀농 관심 사상 최고 — SNS 팜라이프 콘텐츠 폭발. 2025년 30대 이하 청년 귀농 비중 역대 최고</div>
+            <div class="s04-why-item">폐공장 급증 — 제조업 구조조정 가속. 유휴 시설 공급 지속 증가</div>
+            <div class="s04-why-item">IoT·AI 비용 급락 — 센서·MCU 단가 5년간 60% 하락. AI API 비용 실용 수준 진입</div>
+            <div class="s04-why-item">구독경제 성숙 — OTT·구독박스 보편화. 월정액 모델 수용성 높음</div>
+            <div class="s04-why-item">정부 지원 확대 — 스마트팜 혁신밸리 4개소 운영. 스타트업 연계 보조금 병행</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-no dark">04</div>
+</div>
+
+<!-- ════════════════════════  CHAPTER II  ════════════════════════ -->
+<div class="slide schap">
+  <div class="schap-body">
+    <div class="schap-num">II</div>
+    <div class="schap-line"></div>
+    <div class="schap-title">CoGLabs 솔루션</div>
+    <div class="schap-en">CoGLabs Solution</div>
+  </div>
+</div>
+
+<!-- ════════════════════════  SLIDE 05 · BM OVERVIEW  ════════════════════════ -->
+<div class="slide s05">
+  <div class="sh">
+    <div class="sh-chapter">II. CoGLabs 솔루션</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s05-body">
+    <div class="sec-badge badge-g">Business Model Overview</div>
+    <div class="s05-heading">두 타겟, <em>하나의 플랫폼</em></div>
+    <div class="s05-sub">CoGLabs는 단일 플랫폼으로 귀농 희망자와 기존 농업인 두 가지 문제를 동시에 해결합니다.</div>
+
+    <div class="s05-diagram">
+
+      <!-- Target A -->
+      <div class="s05-target">
+        <div class="s05-target-tag s05-ta-tag">Target A · 귀농 희망자</div>
+        <div class="s05-target-pain">"농사를 해보고 싶다<br>— 공간도, 기술도 없다"</div>
+        <div class="s05-segs">
+          <div class="s05-seg">
+            <div class="s05-seg-icon">🏙️</div>
+            <div class="s05-seg-info">
+              <div class="s05-seg-name">귀농 준비 도시인</div>
+              <div class="s05-seg-desc">30~50대 직장인, 실제 귀농 준비 중</div>
+            </div>
+          </div>
+          <div class="s05-seg">
+            <div class="s05-seg-icon">🎓</div>
+            <div class="s05-seg-info">
+              <div class="s05-seg-name">학생·교육기관</div>
+              <div class="s05-seg-desc">농업 실습·체험 교육 과정 연계</div>
+            </div>
+          </div>
+          <div class="s05-seg">
+            <div class="s05-seg-icon">🏢</div>
+            <div class="s05-seg-info">
+              <div class="s05-seg-name">기업·단체 (CSR)</div>
+              <div class="s05-seg-desc">임직원 복지·ESG 프로그램</div>
+            </div>
+          </div>
+          <div class="s05-seg">
+            <div class="s05-seg-icon">🌿</div>
+            <div class="s05-seg-info">
+              <div class="s05-seg-name">도시 취미 농부</div>
+              <div class="s05-seg-desc">가벼운 체험·수확 경험을 원하는 도시인</div>
+            </div>
+          </div>
+        </div>
+        <div class="s05-value">
+          <div class="s05-value-title">얻는 것</div>
+          <div class="s05-value-items">
+            <div class="s05-value-item">초기 0원으로 농사 시작</div>
+            <div class="s05-value-item">경험 쌓아 독립 농장으로</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow Left -->
+      <div class="s05-arrow">
+        <div class="s05-arrow-line"></div>
+        <div class="s05-arrow-mid">
+          <div class="s05-arrow-badge">월 구독료<br>5~30만원</div>
+          <div style="font-size:1rem;color:var(--green)">⇄</div>
+          <div class="s05-arrow-badge rev">공간·기술<br>유통 제공</div>
+        </div>
+        <div class="s05-arrow-line"></div>
+      </div>
+
+      <!-- Platform Center -->
+      <div class="s05-platform">
+        <div class="s05-platform-tag">CoGLabs Platform</div>
+        <div class="s05-platform-name">하나의 플랫폼</div>
+        <div class="s05-platform-resources">
+          <div class="s05-resource">🏭 공간 — 폐공장 스마트온실</div>
+          <div class="s05-resource">🤖 기술 — IoT · AI · 3D</div>
+          <div class="s05-resource">📦 유통 — 4채널 판로</div>
+          <div class="s05-resource">🤝 커뮤니티 · 귀농 코칭</div>
+        </div>
+        <div class="s05-platform-rev">
+          <div class="s05-rev-row">기존 농업인 노하우<br>→ 귀농 희망자에게 전달</div>
+          <div class="s05-rev-row" style="margin-top:6px"><strong>선순환 커뮤니티 생태계</strong></div>
+        </div>
+      </div>
+
+      <!-- Arrow Right -->
+      <div class="s05-arrow">
+        <div class="s05-arrow-line"></div>
+        <div class="s05-arrow-mid">
+          <div class="s05-arrow-badge">월 구독료<br>10~20만원</div>
+          <div style="font-size:1rem;color:var(--green)">⇄</div>
+          <div class="s05-arrow-badge rev">플랫폼·판로<br>제공</div>
+        </div>
+        <div class="s05-arrow-line"></div>
+      </div>
+
+      <!-- Target B -->
+      <div class="s05-target">
+        <div class="s05-target-tag s05-tb-tag">Target B · 기존 농업인</div>
+        <div class="s05-target-pain">"스마트팜이 너무 비싸다<br>— 판로도 불안정하다"</div>
+        <div class="s05-segs">
+          <div class="s05-seg">
+            <div class="s05-seg-icon">🌾</div>
+            <div class="s05-seg-info">
+              <div class="s05-seg-name">소규모 농가</div>
+              <div class="s05-seg-desc">스마트팜 전환 비용 부담 큰 농가</div>
+            </div>
+          </div>
+          <div class="s05-seg">
+            <div class="s05-seg-icon">🏡</div>
+            <div class="s05-seg-info">
+              <div class="s05-seg-name">귀촌인</div>
+              <div class="s05-seg-desc">이미 귀촌했지만 판로 안정이 필요한 농가</div>
+            </div>
+          </div>
+          <div class="s05-seg">
+            <div class="s05-seg-icon">🔧</div>
+            <div class="s05-seg-info">
+              <div class="s05-seg-name">스마트팜 전환 희망 농가</div>
+              <div class="s05-seg-desc">기술은 원하지만 비용·인력이 없는 농가</div>
+            </div>
+          </div>
+        </div>
+        <div class="s05-value-b s05-value">
+          <div class="s05-value-title" style="color:var(--dark2)">얻는 것</div>
+          <div class="s05-value-items">
+            <div class="s05-value-item">장비 없이 스마트팜 수준 운영</div>
+            <div class="s05-value-item">4채널 판로 안정 확보</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="slide-no dark">05</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 06 · SPACE  ════════════════════════ -->
+<div class="slide s-sp">
+  <div class="sh">
+    <div class="sh-chapter">II. CoGLabs 솔루션 — 공간</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s-sp-body">
+
+    <!-- Left: dark hero -->
+    <div class="s-sp-hero">
+      <div class="s-sp-hero-tag">Space · 01</div>
+      <div class="s-sp-hero-title"><em>CoGLabs</em>가 짓고<br>구독자는 쓴다</div>
+      <div class="s-sp-hero-desc">폐공장을 완전밀폐형 스마트온실로 전환합니다.<br>구독자는 초기 투자 0원으로 바로 재배를 시작합니다.<br>시설 유지·보수는 CoGLabs 운영팀이 전담합니다.</div>
+      <div class="s-sp-tiles">
+        <div class="s-sp-tile">
+          <div class="s-sp-tile-val">0원</div>
+          <div class="s-sp-tile-label">구독자<br>초기 투자</div>
+        </div>
+        <div class="s-sp-tile">
+          <div class="s-sp-tile-val">1/3</div>
+          <div class="s-sp-tile-label">신축 대비<br>구축비</div>
+        </div>
+        <div class="s-sp-tile">
+          <div class="s-sp-tile-val">365일</div>
+          <div class="s-sp-tile-label">연중<br>재배 가능</div>
+        </div>
+      </div>
+      <div class="s-sp-feats">
+        <div class="s-sp-feat"><strong>완전밀폐형</strong> — 날씨·계절 무관, 온도·습도·CO₂ 완전 환경 제어</div>
+        <div class="s-sp-feat"><strong>폐공장 기존 전기·수도·구조 활용</strong> — 시설 구축비 신축 대비 1/3 수준</div>
+        <div class="s-sp-feat">단독 구획 / 공유 구획 선택 가능, 구획당 독립 환경 제어</div>
+        <div class="s-sp-feat"><strong>에너지 비용 약 40% 절감</strong> — LED 효율화 + 폐열 재활용 설계</div>
+      </div>
+      <div class="s-sp-testbed">
+        <strong>📍 전라남도 장성 테스트베드</strong> 운영 중<br>
+        루꼴라 재배 중 · 바질 수확 완료 &mdash; 씨앗 → 수확 <strong>3~4주</strong>
+      </div>
+    </div>
+
+    <!-- Right: comparison table -->
+    <div class="s-sp-info">
+      <div class="s-sp-info-head">왜 폐공장 완전밀폐형인가 — 3가지 비교</div>
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>비닐하우스</th>
+            <th>완전밀폐형 신축</th>
+            <th class="cog-h">CoGLabs 폐공장 ✅</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>구축비 (3.3㎡당)</td>
+            <td>30~80만 원</td>
+            <td>400만 원 이상</td>
+            <td class="cog-hi">80~200만 원</td>
+          </tr>
+          <tr>
+            <td>날씨·계절 영향</td>
+            <td>큼</td>
+            <td>없음</td>
+            <td class="cog-hi">없음 ✓</td>
+          </tr>
+          <tr>
+            <td>환경 완전 제어</td>
+            <td>△ 부분</td>
+            <td>✓</td>
+            <td class="cog-hi">✓</td>
+          </tr>
+          <tr>
+            <td>기존 인프라 활용</td>
+            <td>✗</td>
+            <td>✗</td>
+            <td class="cog-hi">✓ 전기·수도·구조</td>
+          </tr>
+          <tr>
+            <td>구독자 초기 비용</td>
+            <td>별도</td>
+            <td>수억 원</td>
+            <td class="cog-hi">0원 ✓</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="s-sp-note">
+        <strong>핵심 포인트</strong>: 폐공장의 전기·수도·구조를 그대로 활용하기 때문에 신축 대비 구축비를 <strong>1/3 수준</strong>으로 낮출 수 있습니다.
+        완전밀폐형이므로 채광창 불필요 — LED 시스템이 핵심 설비이며, 연중 안정적인 재배 환경을 만듭니다.
+      </div>
+    </div>
+
+  </div>
+  <div class="slide-no dark">06</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 07 · TECHNOLOGY  ════════════════════════ -->
+<div class="slide s-tk">
+  <div class="sh">
+    <div class="sh-chapter">II. CoGLabs 솔루션 — 기술</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s-tk-body">
+
+    <!-- Left: feature list -->
+    <div class="s-tk-left">
+      <div class="sec-badge badge-g">Technology Platform</div>
+      <div class="s-tk-heading">경험 없어도,<br><em>전문가처럼</em> 운영</div>
+      <div class="s-tk-sub">IoT·AI·3D가 하나로 연결된 플랫폼.<br>웹 대시보드와 모바일 앱으로 언제 어디서나 농장을 관리합니다.</div>
+      <div class="s-tk-feats">
+        <div class="s-tk-feat">
+          <div class="s-tk-feat-icon">IoT</div>
+          <div>
+            <div class="s-tk-feat-title">8종 센서 실시간 모니터링</div>
+            <div class="s-tk-feat-desc">온도·습도·CO₂·조도·pH·EC·수온·용존산소 — 24시간 이중축 차트, 이상 즉시 알림</div>
+          </div>
+        </div>
+        <div class="s-tk-feat">
+          <div class="s-tk-feat-icon">AI</div>
+          <div>
+            <div class="s-tk-feat-title">AI 챗봇 어시스턴트</div>
+            <div class="s-tk-feat-desc">AWS Bedrock 실 API. 내 농장 센서 데이터 직접 연결. 사진 찍어 질문 → 즉각 답변</div>
+          </div>
+        </div>
+        <div class="s-tk-feat">
+          <div class="s-tk-feat-icon">3D</div>
+          <div>
+            <div class="s-tk-feat-title">3D 디지털 트윈 + CCTV</div>
+            <div class="s-tk-feat-desc">Three.js 기반 3D 농장 가상 공간. 센서 상태 실시간 오버레이 + CCTV 연동</div>
+          </div>
+        </div>
+        <div class="s-tk-feat">
+          <div class="s-tk-feat-icon">CTL</div>
+          <div>
+            <div class="s-tk-feat-title">장비 원격 제어</div>
+            <div class="s-tk-feat-desc">LED·환기팬·양액기·냉난방기·CO₂ 자동/수동 전환, 목표값 조정</div>
+          </div>
+        </div>
+        <div class="s-tk-feat">
+          <div class="s-tk-feat-icon">MOB</div>
+          <div>
+            <div class="s-tk-feat-title">모바일 풀 지원</div>
+            <div class="s-tk-feat-desc">3D 풀스크린 · 원터치 제어 · 수확 D-day 카운트다운 · 푸시 알림</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: feature table -->
+    <div class="s-tk-right">
+      <table class="s-tk-table">
+        <thead>
+          <tr>
+            <th>기능</th>
+            <th>웹 대시보드</th>
+            <th>모바일 앱</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IoT 실시간 모니터링</td>
+            <td>8종 센서 이중축 차트, 정밀 이력 분석</td>
+            <td>핵심 수치 요약 카드 <span class="s-tk-mob-badge">📱</span></td>
+          </tr>
+          <tr>
+            <td>AI 챗봇</td>
+            <td>대화 히스토리 + CCTV 이미지 분석</td>
+            <td>음성·사진 질문 즉시 답변 <span class="s-tk-mob-badge">📱</span></td>
+          </tr>
+          <tr>
+            <td>3D 농장 뷰어</td>
+            <td>Three.js 디지털 트윈, 센서 오버레이</td>
+            <td>풀스크린 3D 뷰 <span class="s-tk-mob-badge">📱</span></td>
+          </tr>
+          <tr>
+            <td>장비 원격 제어</td>
+            <td>전체 장비 자동/수동 목표값 설정</td>
+            <td>원터치 On/Off 제어 <span class="s-tk-mob-badge">📱</span></td>
+          </tr>
+          <tr>
+            <td>스마트 알림</td>
+            <td>알림 센터 (위험·기회·정보 분류)</td>
+            <td>실시간 푸시 알림 <span class="s-tk-mob-badge">📱</span></td>
+          </tr>
+          <tr>
+            <td>수확 관리</td>
+            <td>수확 예정일 타임라인 + 출하 채널 연결</td>
+            <td>D-day 카운트다운 <span class="s-tk-mob-badge">📱</span></td>
+          </tr>
+          <tr>
+            <td>커뮤니티</td>
+            <td>타임랩스 · 스토리북 · 이웃 농장</td>
+            <td>공유 · 하트 · 설정 구독</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="s-tk-note">
+        <strong>기술 스택</strong>: React + TypeScript + Vite ·  Three.js (3D) ·  AWS Bedrock (AI) ·  AWS Amplify (인프라) ·  IoT 센서 8종 ·  CCTV API 연동
+      </div>
+    </div>
+
+  </div>
+  <div class="slide-no dark">07</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 08 · 유통 & 커뮤니티  ════════════════════════ -->
+<div class="slide s08">
+  <div class="sh">
+    <div class="sh-chapter">II. CoGLabs 솔루션</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s08-body">
+    <div class="sec-badge badge-g">Distribution &amp; Community</div>
+    <div class="s08-heading">수확하면 끝이 아니다 — <em>판매·커뮤니티까지</em> 하나의 플랫폼</div>
+    <div class="s08-sub">플랫폼을 떠나지 않아도 됩니다. 수확부터 정산, 커뮤니티까지 동일한 대시보드에서 처리됩니다.</div>
+
+    <div class="s08-split">
+
+      <div class="s08-left">
+        <div class="s08-panel-title">DISTRIBUTION · 유통</div>
+        <div class="s08-channels">
+          <div class="s08-channel">
+            <div class="s08-channel-icon">🏭</div>
+            <div>
+              <div class="s08-channel-title">B2B 도매</div>
+              <div class="s08-channel-desc">도매시장 실시간 시세 확인 후 최적 타이밍 출하</div>
+            </div>
+          </div>
+          <div class="s08-channel">
+            <div class="s08-channel-icon">🏪</div>
+            <div>
+              <div class="s08-channel-title">로컬푸드</div>
+              <div class="s08-channel-desc">지역 소비자 직결 판매</div>
+            </div>
+          </div>
+          <div class="s08-channel">
+            <div class="s08-channel-icon">🚚</div>
+            <div>
+              <div class="s08-channel-title">직거래</div>
+              <div class="s08-channel-desc">정기 구독자에게 직접 배송</div>
+            </div>
+          </div>
+          <div class="s08-channel">
+            <div class="s08-channel-icon">🍽️</div>
+            <div>
+              <div class="s08-channel-title">식당 납품</div>
+              <div class="s08-channel-desc">레스토랑·카페 B2B 연결</div>
+            </div>
+          </div>
+        </div>
+        <div class="s08-tags">
+          <div class="s08-tag">
+            <div class="s08-tag-title">🤖 AI 품질 등급 예측 (S/A/B/C)</div>
+            <div class="s08-tag-desc">수확 전 AI가 등급을 미리 예측 — 최적 채널로 자동 매칭</div>
+          </div>
+          <div class="s08-tag">
+            <div class="s08-tag-title">📱 트레이서빌리티 QR 자동 발급</div>
+            <div class="s08-tag-desc">품종·파종일·수확일·무농약 여부 이력. 구매자가 스캔하면 재배 여정 전체 확인 → 프리미엄 포지셔닝</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s08-divider"></div>
+
+      <div class="s08-right">
+        <div class="s08-panel-title">COMMUNITY · 커뮤니티</div>
+        <div class="s08-co-items">
+          <div class="s08-co-item">
+            <div class="s08-co-icon">🎬</div>
+            <div>
+              <div class="s08-co-title">재배 타임랩스</div>
+              <div class="s08-co-desc">Day 1부터 수확일까지 자동 기록. 수확 여정 전체가 콘텐츠 — SNS 공유로 자연 바이럴</div>
+            </div>
+          </div>
+          <div class="s08-co-item">
+            <div class="s08-co-icon">📖</div>
+            <div>
+              <div class="s08-co-title">농장 스토리북</div>
+              <div class="s08-co-desc">식재·단계전환·수확이 자동 타임라인으로 기록·공유. 카테고리 필터로 전 과정 탐색</div>
+            </div>
+          </div>
+          <div class="s08-co-item">
+            <div class="s08-co-icon">🤝</div>
+            <div>
+              <div class="s08-co-title">이웃 농장 네트워크</div>
+              <div class="s08-co-desc">검증된 재배 설정 직접 공유. 레벨 시스템 + 응원 하트. 고립감 없이 함께 성장</div>
+            </div>
+          </div>
+        </div>
+        <div class="s08-viral">
+          <div class="s08-viral-inner">
+            <div class="s08-viral-text">구독자의 타임랩스 공유가 <strong>자연 바이럴 마케팅 채널</strong>로 작동 — 콘텐츠가 곧 신규 구독자 유입</div>
+            <div class="s08-viral-label">Community → Viral Growth</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="slide-no dark">08</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 09 · 독립 로드맵  ════════════════════════ -->
+<div class="slide s09">
+  <div class="sh">
+    <div class="sh-chapter">II. CoGLabs 솔루션</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s09-body">
+    <div class="sec-badge badge-g">Independence Roadmap</div>
+    <div class="s09-heading">구독에서 시작해, <em>내 농장</em>으로 독립</div>
+    <div class="s09-sub">CoGLabs는 귀농의 온보딩 플랫폼입니다. 데이터와 경험이 쌓이면, 내 농장으로 나갑니다.</div>
+
+    <div class="s09-flow">
+      <div class="s09-step">
+        <div class="s09-step-num">STEP 01</div>
+        <div class="s09-step-title">구획 배정</div>
+        <div class="s09-step-desc">월 구독으로 시작.<br>단독/공유 구획 선택.</div>
+      </div>
+      <div class="s09-arrow">→</div>
+      <div class="s09-step">
+        <div class="s09-step-num">STEP 02</div>
+        <div class="s09-step-title">AI 원격 재배</div>
+        <div class="s09-step-desc">앱·대시보드로 관리.<br>AI가 24시간 보조.</div>
+      </div>
+      <div class="s09-arrow">→</div>
+      <div class="s09-step">
+        <div class="s09-step-num">STEP 03</div>
+        <div class="s09-step-title">수확 &amp; 판매</div>
+        <div class="s09-step-desc">등급 예측 후 수확.<br>4채널 유통 연계.</div>
+      </div>
+      <div class="s09-arrow">→</div>
+      <div class="s09-step accent">
+        <div class="s09-step-num">STEP 04</div>
+        <div class="s09-step-title">내 농장 독립</div>
+        <div class="s09-step-desc">데이터 이관 후<br>독립 농장 개설.</div>
+      </div>
+    </div>
+
+    <div class="s09-support">
+      <div class="s09-sup">
+        <div class="s09-sup-title">귀농 준비도 추적</div>
+        <div class="s09-sup-desc">재배 이력, 수확 실적, 운영 숙련도를 종합한 준비도 점수를 실시간 제공합니다.</div>
+      </div>
+      <div class="s09-sup">
+        <div class="s09-sup-title">독립 농장 컨설팅</div>
+        <div class="s09-sup-desc">농장 설계·입지 선정·인허가·정책자금 컨설팅까지 독립 전 과정 지원합니다.</div>
+      </div>
+      <div class="s09-sup">
+        <div class="s09-sup-title">재배 데이터 전체 이관</div>
+        <div class="s09-sup-desc">구독 기간 중 수집된 센서 이력·수확 로그·AI 분석 데이터를 전량 이관합니다.</div>
+      </div>
+      <div class="s09-sup">
+        <div class="s09-sup-title">유통 채널 자동 연계</div>
+        <div class="s09-sup-desc">독립 후에도 B2B 도매·로컬푸드 채널을 그대로 활용할 수 있습니다.</div>
+      </div>
+    </div>
+
+    <div class="s09-quote">
+      <div class="s09-quote-text">CoGLabs에서의 구독은 <em>독립 농장의 대학교 4년</em>과 같습니다. 쌓인 경험과 데이터가 그대로 독립 농장의 자산이 됩니다.</div>
+    </div>
+
+  </div>
+  <div class="slide-no dark">09</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 10 · 서비스 이용 5단계  ════════════════════════ -->
+<div class="slide s10">
+  <div class="sh">
+    <div class="sh-chapter">II. CoGLabs 솔루션</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s10-body">
+    <div class="sec-badge badge-g">Service Process</div>
+    <div class="s10-heading">앱을 떠나지 않는다 — <em>구독부터 정산까지</em> 하나의 흐름</div>
+    <div class="s10-sub">IoT로 제어 가능한 작업은 앱에서 직접, 사람 손이 필요한 작업은 요청하면 관리자가 실행합니다.</div>
+
+    <div class="s10-flow">
+      <div class="s10-step user">
+        <div class="s10-step-num">STEP 01</div>
+        <div class="s10-step-title">구독 시작</div>
+        <div class="s10-step-desc">구획 크기와 작물 종류 선택. 맞춤 구독료 자동 결정.</div>
+        <div class="s10-step-who">사용자</div>
+      </div>
+      <div class="s10-arrow">→</div>
+      <div class="s10-step admin">
+        <div class="s10-step-num">STEP 02</div>
+        <div class="s10-step-title">구획 배정</div>
+        <div class="s10-step-desc">전용 구획 배정 및 관리자 파종 실행.</div>
+        <div class="s10-step-who">관리자</div>
+      </div>
+      <div class="s10-arrow">→</div>
+      <div class="s10-step user">
+        <div class="s10-step-num">STEP 03</div>
+        <div class="s10-step-title">원격 재배 관리</div>
+        <div class="s10-step-desc">IoT 직접 제어 + AI 알림. 문제 발생 시 챗봇에 사진 질문.</div>
+        <div class="s10-step-who">사용자</div>
+      </div>
+      <div class="s10-arrow">→</div>
+      <div class="s10-step both">
+        <div class="s10-step-num">STEP 04</div>
+        <div class="s10-step-title">수확 요청</div>
+        <div class="s10-step-desc">앱에서 수확 요청. 현장 관리자가 수확 처리 실행.</div>
+        <div class="s10-step-who">사용자 → 관리자</div>
+      </div>
+      <div class="s10-arrow">→</div>
+      <div class="s10-step user">
+        <div class="s10-step-num">STEP 05</div>
+        <div class="s10-step-title">유통 &amp; 정산</div>
+        <div class="s10-step-desc">채널 선택 후 출하·정산 자동 처리. 동일 플랫폼에서 완결.</div>
+        <div class="s10-step-who">사용자</div>
+      </div>
+    </div>
+
+    <div class="s10-legend">
+      <div class="s10-legend-item"><div class="s10-legend-dot user"></div>사용자 직접</div>
+      <div class="s10-legend-item"><div class="s10-legend-dot admin"></div>관리자 실행</div>
+      <div class="s10-legend-item"><div class="s10-legend-dot both"></div>협력 진행</div>
+    </div>
+
+    <div class="s10-principle">
+      <div class="s10-principle-item">구독료 = <strong>구획 수(공간 범위) × 식물 종류·수량</strong> — 필요한 만큼만 구독</div>
+      <div class="s10-principle-item">직접 제어 불가 작업(파종·수확) → <strong>앱에서 요청하면 관리자 실행</strong></div>
+    </div>
+
+  </div>
+  <div class="slide-no dark">10</div>
+</div>
+
+<!-- ════════════════════════  CHAPTER III  ════════════════════════ -->
+<div class="slide schap">
+  <div class="schap-body">
+    <div class="schap-num">III</div>
+    <div class="schap-line"></div>
+    <div class="schap-title">사업 전략</div>
+    <div class="schap-en">Business Strategy</div>
+  </div>
+</div>
+
+<!-- ════════════════════════  SLIDE 11 · 구독 플랜  ════════════════════════ -->
+<div class="slide s11p">
+  <div class="sh">
+    <div class="sh-chapter">III. 사업 전략</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s11p-body">
+    <div class="sec-badge badge-g">Business Model</div>
+    <div class="s11p-heading">구독 플랜 &amp; <em>수익 구조</em></div>
+    <div class="s11p-sub">두 타겟 각각에 맞는 구독 티어. 하나의 플랫폼, 두 가지 수익 채널.</div>
+
+    <div class="s11p-cols">
+
+      <div class="s11p-left">
+        <div class="s11p-target-title">TARGET A · 귀농 희망자 플랜 (CoGLabs 시설 내 구획 이용)</div>
+        <div class="s11p-plans">
+          <div class="s11p-plan">
+            <div class="s11p-tier">Starter Tier</div>
+            <div class="s11p-plan-name">체험 플랜</div>
+            <div class="s11p-price">
+              <div class="s11p-price-num">5만</div>
+              <div class="s11p-price-unit">원 / 월</div>
+            </div>
+            <div class="s11p-feats">
+              <div class="s11p-feat"><span class="ck">✓</span> 구획 1칸 배정</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 앱 실시간 모니터링</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 주 1회 전문가 코칭</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 수확물 50% 수령</div>
+              <div class="s11p-feat"><span class="ck no">✗</span> 장비 제어권</div>
+              <div class="s11p-feat"><span class="ck no">✗</span> AI 분석 리포트</div>
+            </div>
+          </div>
+          <div class="s11p-plan featured">
+            <div class="s11p-plan-badge">인기</div>
+            <div class="s11p-tier">Growth Tier</div>
+            <div class="s11p-plan-name">성장 플랜</div>
+            <div class="s11p-price">
+              <div class="s11p-price-num">15만</div>
+              <div class="s11p-price-unit">원 / 월</div>
+            </div>
+            <div class="s11p-feats">
+              <div class="s11p-feat"><span class="ck">✓</span> 구획 3칸 배정</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 실시간 제어 + AI 리포트</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 멘토링 + 귀농 컨설팅</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 4채널 유통 연계</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 3D 뷰어 대시보드</div>
+            </div>
+          </div>
+          <div class="s11p-plan">
+            <div class="s11p-tier">Independence Tier</div>
+            <div class="s11p-plan-name">독립 준비</div>
+            <div class="s11p-price">
+              <div class="s11p-price-num">30만</div>
+              <div class="s11p-price-unit">원 / 월</div>
+            </div>
+            <div class="s11p-feats">
+              <div class="s11p-feat"><span class="ck">✓</span> 전용 하우스 배정</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 모든 기능 전권 제어</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 독립 로드맵 1:1 지원</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 농장 개설 + 인허가 지원</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 데이터 전체 이관</div>
+            </div>
+          </div>
+        </div>
+        <div class="s11p-rev">
+          <div class="s11p-rev-item">📄 <strong>월 구독료</strong> (주력)</div>
+          <div class="s11p-rev-item">🔗 <strong>유통·판로 수수료</strong></div>
+          <div class="s11p-rev-item">🌾 <strong>B2B 교육·기업 계약</strong></div>
+        </div>
+      </div>
+
+      <div class="s11p-divider"></div>
+
+      <div class="s11p-right">
+        <div class="s11p-target-title">TARGET B · 기존 농업인 플랜 (자신의 농장에 플랫폼 도입)</div>
+        <div class="s11p-b-plans">
+          <div class="s11p-b-plan">
+            <div class="s11p-tier">Basic</div>
+            <div class="s11p-plan-name">플랫폼 Basic</div>
+            <div class="s11p-price">
+              <div class="s11p-price-num">10만</div>
+              <div class="s11p-price-unit">원 / 월</div>
+            </div>
+            <div class="s11p-feats">
+              <div class="s11p-feat"><span class="ck">✓</span> 센서 4종 실시간</div>
+              <div class="s11p-feat"><span class="ck">✓</span> AI 기본 질의응답</div>
+              <div class="s11p-feat"><span class="ck">✓</span> CoGLabs 마켓 등록</div>
+              <div class="s11p-feat"><span class="ck no">✗</span> 원격 장비 제어</div>
+            </div>
+          </div>
+          <div class="s11p-b-plan">
+            <div class="s11p-tier">Pro</div>
+            <div class="s11p-plan-name">플랫폼 Pro</div>
+            <div class="s11p-price">
+              <div class="s11p-price-num">20만</div>
+              <div class="s11p-price-unit">원 / 월</div>
+            </div>
+            <div class="s11p-feats">
+              <div class="s11p-feat"><span class="ck">✓</span> 센서 8종 + 이력 분석</div>
+              <div class="s11p-feat"><span class="ck">✓</span> AI 데이터 연동 심층 분석</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 원격 자동/수동 제어</div>
+              <div class="s11p-feat"><span class="ck">✓</span> 4채널 우선 배정</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="slide-no dark">11</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 12 · 경쟁 우위  ════════════════════════ -->
+<div class="slide s12c">
+  <div class="sh">
+    <div class="sh-chapter">III. 사업 전략</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s12c-body">
+    <div class="sec-badge badge-g">Competitive Advantage</div>
+    <div class="s12c-heading">공간 제공 + 낮은 진입 비용 — <em>CoGLabs만의 사분면</em></div>
+    <div class="s12c-sub">기존 업체들은 장비를 팔거나 플랫폼을 제공합니다. 공간을 직접 제공하면서 진입 비용을 월 구독 수준으로 낮춘 곳은 CoGLabs가 유일합니다.</div>
+
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th>비교 항목</th>
+          <th class="cog">CoGLabs ✅</th>
+          <th>그린랩스</th>
+          <th>팜에이트</th>
+          <th>엔씨 (N.Thing)</th>
+          <th>KT AgriX</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>비즈니스 모델</td>
+          <td class="cog-col">구독 B2C</td>
+          <td>SaaS B2B</td>
+          <td>직영 식물공장</td>
+          <td>IoT 판매</td>
+          <td>대기업 SI</td>
+        </tr>
+        <tr>
+          <td>공간 직접 제공</td>
+          <td class="cog-col"><span class="ck2">✓</span> 구획 배정</td>
+          <td><span class="cr">✗</span></td>
+          <td>자체만</td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+        </tr>
+        <tr>
+          <td>진입 비용</td>
+          <td class="cog-col">월 5만~30만 원</td>
+          <td>수천만 원 장비</td>
+          <td>진입 불가</td>
+          <td>2,000~5,000만 원</td>
+          <td>수억 원</td>
+        </tr>
+        <tr>
+          <td>AI 챗봇 (AWS Bedrock)</td>
+          <td class="cog-col"><span class="ck2">✓</span> 실제 API</td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+        </tr>
+        <tr>
+          <td>3D 디지털 트윈 (Three.js)</td>
+          <td class="cog-col"><span class="ck2">✓</span></td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cm">△ 일부</span></td>
+        </tr>
+        <tr>
+          <td>소셜 커뮤니티</td>
+          <td class="cog-col"><span class="ck2">✓</span> 타임랩스·스토리북</td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+        </tr>
+        <tr>
+          <td>4채널 유통 연계</td>
+          <td class="cog-col"><span class="ck2">✓</span></td>
+          <td><span class="cm">△ 일부</span></td>
+          <td>자체 유통</td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cm">△ 일부</span></td>
+        </tr>
+        <tr>
+          <td>귀농 코칭·트레이닝</td>
+          <td class="cog-col"><span class="ck2">✓</span> 전문가 포함</td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+          <td><span class="cr">✗</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="s12c-banner">
+      <div class="s12c-banner-text">공간을 직접 제공하면서, <strong>진입 비용을 월 구독 수준으로 낮춘 것은 CoGLabs가 유일합니다.</strong></div>
+      <div class="s12c-banner-label">Blue Ocean Position</div>
+    </div>
+
+  </div>
+  <div class="slide-no dark">12</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 13 · GTM & 확장 로드맵  ════════════════════════ -->
+<div class="slide s13g">
+  <div class="sh">
+    <div class="sh-chapter">III. 사업 전략</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s13g-body">
+    <div class="sec-badge badge-g">Go-to-Market &amp; Roadmap</div>
+    <div class="s13g-heading">GTM 전략 &amp; <em>확장 로드맵</em></div>
+    <div class="s13g-sub">타임랩스로 알리고, 체험으로 전환하고, 커뮤니티로 확산합니다.</div>
+
+    <div class="s13g-cols">
+
+      <div class="s13g-left">
+        <div class="s13g-panel-title">GTM 전략</div>
+        <table class="s13g-table">
+          <thead>
+            <tr>
+              <th>단계</th>
+              <th>채널</th>
+              <th>전술</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>인지</td>
+              <td>SNS 콘텐츠 마케팅</td>
+              <td>재배 타임랩스·팜라이프 영상으로 귀농 희망층 자발적 유입. 유튜브·인스타그램 순통 운영</td>
+            </tr>
+            <tr>
+              <td>온보딩</td>
+              <td>지자체 귀농 프로그램 연계</td>
+              <td>귀농귀촌 지원센터·청년 창업 연계로 신뢰도 확보. 시설 견학·체험 프로그램 운영</td>
+            </tr>
+            <tr>
+              <td>전환</td>
+              <td>1개월 무료 체험</td>
+              <td>직접 경험 후 성장 플랜 전환. 초기 성공 사례 집중 확보 → 레퍼런스 마케팅</td>
+            </tr>
+            <tr>
+              <td>확장</td>
+              <td>커뮤니티 바이럴</td>
+              <td>구독자 타임랩스 공유가 자연 마케팅 채널로 작동. 레벨·배지 시스템으로 참여 유도</td>
+            </tr>
+            <tr>
+              <td>B2B</td>
+              <td>학교·기업 직접 영업</td>
+              <td>교육기관·기업 복지부서 대상 고정 계약 수익 확보</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="s13g-kpi">
+          <div class="s13g-kpi-label">Phase 1 KPI</div>
+          <div class="s13g-kpi-value">6개월 내 유료 구독자 100명 — 1호 시설 완판</div>
+          <div class="s13g-kpi-desc">구독 전환률 100% 목표</div>
+        </div>
+      </div>
+
+      <div class="s13g-divider"></div>
+
+      <div class="s13g-right">
+        <div class="s13g-panel-title">단계별 확장 로드맵</div>
+        <div class="s13g-phases">
+          <div class="s13g-phase s13g-p1">
+            <div>
+              <div class="s13g-phase-tag">PHASE 1</div>
+              <div class="s13g-phase-period">2026년 하반기</div>
+              <div class="s13g-phase-name">1호 시설 완공 · 분양</div>
+              <div class="s13g-phase-desc">실제 운영 데이터 축적. 모델 재현 가능성 증명.</div>
+              <div class="s13g-phase-goal">타겟: 1호 시설 완판 · 구독 전환률 100%</div>
+            </div>
+          </div>
+          <div class="s13g-phase s13g-p2">
+            <div>
+              <div class="s13g-phase-tag">PHASE 2</div>
+              <div class="s13g-phase-period">2027년</div>
+              <div class="s13g-phase-name">2~3호 시설 추가 오픈</div>
+              <div class="s13g-phase-desc">검증된 모델 기반 마케팅 가속화. 누적 구독자로 흑자 전환.</div>
+              <div class="s13g-phase-goal">타겟: 누적 3개 시설 · MRR 안정화 · 흑자 전환</div>
+            </div>
+          </div>
+          <div class="s13g-phase s13g-p3">
+            <div>
+              <div class="s13g-phase-tag">PHASE 3</div>
+              <div class="s13g-phase-period">2028년~</div>
+              <div class="s13g-phase-name">전국 10개+ + 동남아시아 진출</div>
+              <div class="s13g-phase-desc">전국 폐공장 스마트팜 네트워크. 인건비 효율·도시화·신선 채소 수요 급증 시장인 동남아시아로 확장.</div>
+              <div class="s13g-phase-goal">타겟: 전국 10개 시설 + 동남아시아 진출</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="slide-no dark">13</div>
+</div>
+
+<!-- ════════════════════════  CHAPTER IV  ════════════════════════ -->
+<div class="slide schap">
+  <div class="schap-body">
+    <div class="schap-num">IV</div>
+    <div class="schap-line"></div>
+    <div class="schap-title">재무 계획</div>
+    <div class="schap-en">Financial Plan</div>
+  </div>
+</div>
+
+<!-- ════════════════════════  SLIDE 14 · 초기 투자 & 월 운영비  ════════════════════════ -->
+<div class="slide s14p">
+  <div class="sh">
+    <div class="sh-chapter">IV. 재무 계획</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s14p-body">
+    <div class="sec-badge badge-g">Financials</div>
+    <div class="s14p-heading">초기 투자 &amp; <em>월 운영비</em></div>
+    <div class="s14p-sub">1호 시설 (300평) 기준 일회성 투자금 및 월 고정비 분석 — <strong style="color:var(--green)">Phase 1부터 흑자 구조</strong></div>
+    <div class="s14p-cols">
+
+      <div class="s14p-section">
+        <div class="s14p-sec-title">시설 전환 비용 (일회성)</div>
+        <table class="s14p-table">
+          <thead><tr><th>항목</th><th>금액</th></tr></thead>
+          <tbody>
+            <tr><td>폐공장 임차 보증금</td><td>1,500만 원</td></tr>
+            <tr><td>내부 공사 (단열·방습·기밀공조)</td><td>3,500만 원</td></tr>
+            <tr><td>LED 조명 시스템 (완전밀폐형 핵심)</td><td>3,500만 원</td></tr>
+            <tr><td>수경재배 베드·양액 설비</td><td>2,500만 원</td></tr>
+            <tr><td>IoT 센서·장비 제어 시스템</td><td>2,000만 원</td></tr>
+            <tr><td>전기·배관 공사</td><td>1,500만 원</td></tr>
+            <tr><td>기타 (소방·안전·예비비)</td><td>500만 원</td></tr>
+            <tr class="total"><td>합계 (시설 전환)</td><td>1억 5,000만 원</td></tr>
+          </tbody>
+        </table>
+        <div class="s14p-note">
+          ※ 완전밀폐형: 채광창 불필요, LED 시스템이 핵심 설비비<br>
+          ※ 폐공장 기존 전기·수도·구조 활용 → 신축 대비 1/3 수준
+        </div>
+      </div>
+
+      <div class="s14p-section">
+        <div class="s14p-sec-title">월 고정비 (Phase 1 기준)</div>
+        <table class="s14p-table">
+          <thead><tr><th>항목</th><th>월 금액</th></tr></thead>
+          <tbody>
+            <tr><td>인건비</td><td>300만 원</td></tr>
+            <tr><td>폐공장 월세 (평당 6,000원 × 300평)</td><td>180만 원</td></tr>
+            <tr><td>전기·LED전력·수도·소모품</td><td>250만 원</td></tr>
+            <tr><td>AWS 서버·인프라</td><td>50만 원</td></tr>
+            <tr class="total"><td>월 고정비 합계</td><td>780만 원</td></tr>
+          </tbody>
+        </table>
+        <div class="s14p-summary">
+          <div class="s14p-summary-title">초기 필요 자금 총액</div>
+          <div class="s14p-sum-rows">
+            <div class="s14p-sum-row">
+              <span>시설 전환 공사</span>
+              <span>1억 5,000만 원</span>
+            </div>
+            <div class="s14p-sum-row">
+              <span>런칭 준비 운영 버퍼 (3개월)</span>
+              <span>2,340만 원</span>
+            </div>
+            <div class="s14p-sum-row total-row">
+              <span>총 필요 투자금</span>
+              <span>약 1억 7,500만 원</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="slide-no dark">14</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 15 · BEP & Phase별 손익  ════════════════════════ -->
+<div class="slide s15p">
+  <div class="sh">
+    <div class="sh-chapter">IV. 재무 계획</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s15p-body">
+    <div class="sec-badge badge-g">P&amp;L</div>
+    <div class="s15p-heading">BEP &amp; <em>Phase별 손익</em></div>
+    <div class="s15p-sub">ARPU 12.5만 원 기준, Phase 1 고정비 780만 원/월. <strong style="color:var(--green-d)">시설 1개 80명 가동으로 Phase 1부터 즉시 흑자.</strong></div>
+    <div class="s15p-metrics">
+      <div class="s15p-metric">
+        <div class="s15p-metric-label">ARPU</div>
+        <div class="s15p-metric-value">12.5만원</div>
+        <div class="s15p-metric-sub">플랜 믹스 (체험40%·성장50%·독립10%)</div>
+      </div>
+      <div class="s15p-metric">
+        <div class="s15p-metric-label">단위 공헌이익</div>
+        <div class="s15p-metric-value">11만원</div>
+        <div class="s15p-metric-sub">ARPU − 변동비 1.5만/명</div>
+      </div>
+      <div class="s15p-metric">
+        <div class="s15p-metric-label">BEP 구독자</div>
+        <div class="s15p-metric-value">71명</div>
+        <div class="s15p-metric-sub">1개 시설 내 달성 가능</div>
+      </div>
+      <div class="s15p-metric">
+        <div class="s15p-metric-label">3년차 영업이익률</div>
+        <div class="s15p-metric-value">23%</div>
+        <div class="s15p-metric-sub">SaaS 수준 마진 (Phase 3)</div>
+      </div>
+    </div>
+    <table class="s15p-table">
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th class="phase-h">Phase 1 · 1개 시설</th>
+          <th class="phase-h">Phase 2 · 3개 시설</th>
+          <th class="phase-h">Phase 3 · 10개 시설</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>구독자 수</td>
+          <td class="phase-col">80명</td>
+          <td class="phase-col">240명</td>
+          <td class="phase-col">800명</td>
+        </tr>
+        <tr>
+          <td>월 매출</td>
+          <td class="phase-col">1,000만 원</td>
+          <td class="phase-col">3,000만 원</td>
+          <td class="phase-col">1억 원</td>
+        </tr>
+        <tr>
+          <td>월 비용 (고정+변동)</td>
+          <td class="phase-col">900만 원</td>
+          <td class="phase-col">2,550만 원</td>
+          <td class="phase-col">7,700만 원</td>
+        </tr>
+        <tr class="profit-row">
+          <td>월 영업이익</td>
+          <td class="phase-col win">+ 100만 원 (10%)</td>
+          <td class="phase-col win">+ 450만 원 (15%)</td>
+          <td class="phase-col win">+ 2,300만 원 (23%)</td>
+        </tr>
+        <tr>
+          <td>연 매출</td>
+          <td class="phase-col">1억 2,000만 원</td>
+          <td class="phase-col">3억 6,000만 원</td>
+          <td class="phase-col">12억 원</td>
+        </tr>
+        <tr class="profit-row">
+          <td>연 영업이익</td>
+          <td class="phase-col win">+ 1,200만 원</td>
+          <td class="phase-col win">+ 5,400만 원</td>
+          <td class="phase-col win">+ 2억 7,600만 원</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="s15p-highlight">
+      <div class="s15p-highlight-item">Phase 1부터 즉시 흑자<strong>시설 1개, 80명이면 충분</strong></div>
+      <div class="s15p-highlight-item">BEP 구독자<strong>71명</strong></div>
+      <div class="s15p-highlight-item">3년차 영업이익률<strong>23% (SaaS 수준)</strong></div>
+    </div>
+  </div>
+  <div class="slide-no dark">15</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 16 · TEAM  ════════════════════════ -->
+<div class="slide s16">
+  <div class="sh">
+    <div class="sh-chapter">V. 팀 소개</div>
+    <div class="sh-brand">CoGLabs</div>
+  </div>
+  <div class="s16-body">
+    <div class="sec-badge badge-g">Team</div>
+    <div class="s16-heading">AWS·IoT·AI 실전 경험 — <em>이미 함께 납품한 팀</em></div>
+    <div class="s16-sub">세 명 모두 두산전자 스마트팩토리 AI 프로젝트를 함께 완수했습니다. CoGLabs는 그 경험을 농업에 적용합니다.</div>
+
+    <div class="s16-grid">
+
+      <!-- ── 조형래 CEO ── -->
+      <div class="s16-member">
+        <div class="s16-mem-header">
+          <img src="/조형래.png" class="s16-avatar ceo" alt="조형래">
+          <div class="s16-mem-info">
+            <div class="s16-mem-name ceo">조형래</div>
+            <div class="s16-role-badge ceo">Founder · CEO</div>
+          </div>
+        </div>
+        <div class="s16-stack">
+          <span class="s16-stk hi">IoT 자율 생산 설계</span>
+          <span class="s16-stk hi">3D 공장 시각화</span>
+          <span class="s16-stk hi">AI 품질 모니터링</span>
+          <span class="s16-stk">TensorFlow / PyTorch</span>
+          <span class="s16-stk">React · Python · Java</span>
+          <span class="s16-stk">Kubernetes · Docker</span>
+        </div>
+        <div class="s16-careers">
+          <div class="s16-career feat">
+            <div class="s16-career-proj">두산전자 NVIDIA GPU 기판 CCL 공정 AI 자율 생산 시스템</div>
+            <div class="s16-career-period">2025.04 – 2026.02</div>
+            <div class="s16-career-desc">IoT 기반 자율 생산 아키텍처 설계·기획, 3D 공장설비 실시간 시각화, AI 품질 모니터링 대시보드 구축</div>
+          </div>
+          <div class="s16-career feat">
+            <div class="s16-career-proj">스마트팩토리 통합 데이터 레이크 구축</div>
+            <div class="s16-career-period">2024.04 – 2025.02</div>
+            <div class="s16-career-desc">스마트팩토리 특화 데이터 수집·처리 모듈 설계, 실시간·배치 IoT 데이터 파이프라인 구현</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s16-divider"></div>
+
+      <!-- ── 성기범 ── -->
+      <div class="s16-member">
+        <div class="s16-mem-header">
+          <img src="/성기범.png" class="s16-avatar m2" alt="성기범">
+          <div class="s16-mem-info">
+            <div class="s16-mem-name">성기범</div>
+            <div class="s16-role-badge cto">IoT · 백엔드 리드</div>
+          </div>
+        </div>
+        <div class="s16-stack">
+          <span class="s16-stk hi">IoT 디바이스 제어</span>
+          <span class="s16-stk hi">엣지 컴퓨팅</span>
+          <span class="s16-stk hi">실시간 데이터 수집</span>
+          <span class="s16-stk">Kubernetes · Kafka</span>
+          <span class="s16-stk">Spring Boot · Java</span>
+          <span class="s16-stk">CI/CD · Redis</span>
+        </div>
+        <div class="s16-careers">
+          <div class="s16-career feat">
+            <div class="s16-career-proj">두산전자 NVIDIA GPU 기판 CCL 공정 AI 자율 생산 시스템</div>
+            <div class="s16-career-period">2025.04 – 2026.02</div>
+            <div class="s16-career-desc">IoT 엣지 노드 최적화·데이터 유실 방지 설계, 자율 생산 컴포넌트 성능 튜닝 및 안정화</div>
+          </div>
+          <div class="s16-career feat">
+            <div class="s16-career-proj">스마트팩토리 통합 데이터 레이크 구축</div>
+            <div class="s16-career-period">2024.04 – 2025.02</div>
+            <div class="s16-career-desc">IoT 센서 데이터 수집 모듈 개발, ETL 파이프라인 최적화, 실시간 메타데이터 관리 시스템 구현</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s16-divider"></div>
+
+      <!-- ── 진한별 ── -->
+      <div class="s16-member">
+        <div class="s16-mem-header">
+          <img src="/진한별.png" class="s16-avatar m3" alt="진한별">
+          <div class="s16-mem-info">
+            <div class="s16-mem-name">진한별</div>
+            <div class="s16-role-badge cdo">AI · 데이터 시각화 리드</div>
+          </div>
+        </div>
+        <div class="s16-stack">
+          <span class="s16-stk hi">AI 품질 검사</span>
+          <span class="s16-stk hi">공정 데이터 분석</span>
+          <span class="s16-stk hi">실시간 시각화</span>
+          <span class="s16-stk">OpenCV · YOLO</span>
+          <span class="s16-stk">TensorFlow / PyTorch</span>
+          <span class="s16-stk">Prometheus · Grafana</span>
+        </div>
+        <div class="s16-careers">
+          <div class="s16-career feat">
+            <div class="s16-career-proj">두산전자 NVIDIA GPU 기판 CCL 공정 AI 자율 생산 시스템</div>
+            <div class="s16-career-period">2025.04 – 2026.02</div>
+            <div class="s16-career-desc">공정 IoT 데이터 수집 아키텍처 설계, AI 기반 품질 이상 감지·스케줄링 자동화, 데이터 레이크 최적화</div>
+          </div>
+          <div class="s16-career feat">
+            <div class="s16-career-proj">스마트팩토리 통합 데이터 레이크 구축</div>
+            <div class="s16-career-period">2024.04 – 2025.02</div>
+            <div class="s16-career-desc">생산 공정 데이터 실시간 모니터링 시스템 구현, AI 분석 시각화 컴포넌트 개발·테스트 자동화</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 하단 배너 -->
+    <div class="s16-banner">
+      <div class="s16-banner-text">
+        세 명 모두 <strong>두산전자 NVIDIA GPU 기판 CCL 공정 IoT 자율 생산 시스템을 함께 납품</strong>한 검증된 팀.<br>
+        <em>IoT 자율 제어 · AI 품질 분석 · 실시간 시각화 — CoGLabs 스마트팜 플랫폼의 핵심 기술이 팀 안에 있습니다.</em>
+      </div>
+      <div class="s16-need">
+        <div class="s16-need-item">
+          <div class="s16-need-label">투자 요청</div>
+          <div class="s16-need-value">1억 7,500만 원</div>
+        </div>
+        <div class="s16-need-item">
+          <div class="s16-need-label">BEP</div>
+          <div class="s16-need-value">구독자 71명</div>
+        </div>
+        <div class="s16-need-item">
+          <div class="s16-need-label">흑자 전환</div>
+          <div class="s16-need-value">Phase 1</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="slide-no dark">16</div>
+</div>
+
+<!-- ════════════════════════  SLIDE 17 · CLOSING  ════════════════════════ -->
+<div class="slide s17">
+  <div class="s17-inner">
+    <div class="s17-kicker">CoGLabs · AgriTech Subscription Platform</div>
+    <div class="s17-copy">
+      공간도, 기술도, 판로도, 동료도<br>
+      <em>준비하지 않아도 됩니다.</em><br><br>
+      귀농을 향한 마음 하나면 충분합니다.<br><br>
+      CoGLabs는 농업의 진입장벽을 낮추고,<br>
+      <strong>구독자가 자신만의 스마트팜을 열 수 있도록</strong><br>
+      그 모든 여정을 함께합니다.
+    </div>
+    <div class="s17-brand">Cog<span>Labs</span></div>
+    <div class="s17-tagline">폐공장이 다시 살아난다</div>
+    <div class="s17-contact">
+      <div class="s17-contact-item">📧 <strong>dh2359@naver.com</strong></div>
+      <div class="s17-contact-item">📱 <strong>010-4159-9835</strong></div>
+      <div class="s17-contact-item">🌐 <strong>dashboard.cog-labs.com</strong></div>
+    </div>
+  </div>
+  <div class="slide-no">17</div>
+</div>
+
+</body>
+</html>
