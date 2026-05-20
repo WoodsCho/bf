@@ -75,6 +75,37 @@ body {
 .schap-title { font-size: 3.2rem; font-weight: 900; color: white; letter-spacing: -0.04em; }
 .schap-en { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 0.25em; text-transform: uppercase; margin-top: 12px; }
 
+/* ══════════════  SLIDE TOC · 목차  ══════════════ */
+.stoc { background: #f9fafb; }
+.stoc-body { padding: 28px 56px 24px; height: calc(100% - 57px); display: flex; flex-direction: column; }
+.stoc-heading { font-size: 2rem; font-weight: 900; color: var(--dark); letter-spacing: -0.04em; margin-bottom: 24px; }
+.stoc-heading em { color: var(--green); font-style: normal; }
+.stoc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; flex: 1; }
+.stoc-chapter {
+  background: white; border: 1.5px solid var(--gray-xl);
+  border-radius: 14px; padding: 18px 16px;
+  cursor: pointer; transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.stoc-chapter:hover {
+  border-color: var(--green); box-shadow: 0 8px 28px rgba(22,163,74,0.12);
+  transform: translateY(-3px);
+}
+.stoc-ch-num {
+  font-size: 2.2rem; font-weight: 900; color: var(--green);
+  opacity: 0.18; line-height: 1; letter-spacing: -0.04em;
+}
+.stoc-chapter:hover .stoc-ch-num { opacity: 0.6; }
+.stoc-ch-title { font-size: 0.95rem; font-weight: 800; color: var(--dark); margin-bottom: 2px; }
+.stoc-ch-en { font-size: 0.62rem; font-weight: 600; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+.stoc-items { display: flex; flex-direction: column; gap: 6px; }
+.stoc-items span {
+  font-size: 0.7rem; color: var(--gray); line-height: 1.4;
+  padding: 4px 8px; border-radius: 6px; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.stoc-items span:hover { background: rgba(22,163,74,0.08); color: var(--green); }
+
 /* ══════════════  SLIDE 01 · COVER  ══════════════ */
 .s1 { background: linear-gradient(150deg, #071510 0%, #0d2d14 55%, #0f3d1a 100%); }
 .s1-dots { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 44px 44px; }

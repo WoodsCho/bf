@@ -79,6 +79,18 @@ function SlideRenderer({ slide }: { slide: SlideItem }) {
 export default function App() {
   const [mode, setMode] = useState<'scroll' | 'present'>('scroll');
   const [current, setCurrent] = useState(0);
+
+  /* 전역 슬라이드 점프 함수 (TOC에서 사용) */
+  useEffect(() => {
+    (window as unknown as Record<string, unknown>).__goToSlide = (idx: number) => {
+      if (mode === 'present') {
+        setCurrent(idx);
+      } else {
+        const el = document.getElementById(`slide-${idx}`);
+        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+  }, [mode]);
   const [scale, setScale] = useState(1);
   const stageRef = useRef<HTMLDivElement>(null);
   const thumbRef = useRef<HTMLDivElement>(null);
@@ -197,7 +209,7 @@ export default function App() {
       {/* 슬라이드 목록 */}
       <div className="scroll-body">
         {slides.map((s, i) => (
-          <div key={i} className="scroll-slide-wrapper">
+          <div key={i} id={`slide-${i}`} className="scroll-slide-wrapper">
             <SlideRenderer slide={s} />
           </div>
         ))}
